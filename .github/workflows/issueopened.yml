@@ -13,7 +13,7 @@ jobs:
     steps:
     - name: Post Comment
       run: |
-        curl -O https://api.github.com/repos/nthnchu/nathanchu.com/issue
+        curl -O https://api.github.com/repos/nthnchu/nathanchu.com/issues
         ISSUE=`node -e "require('fs').readFile('issues', (err, data) => { if (err) throw err; data = JSON.parse(data)[0]['number']; console.log(data); })"`
         curl -X POST -H "Accept: application/vnd.github.v3+json" -H "Authorization: token ${{ secrets.BOT_GH_TOKEN }}" https://api.github.com/repos/nthnchu/nathanchu.com/issues/$ISSUE/comments \
         -d '{"body":"Hey there :wave:! Thank you for reporting an issue. Make sure this issue has a clear title and description, including how to reproduce it if it is a bug. You also should follow the issue template and answer the questions inside the description. You should expect a response within the next day!\n\n_This message was generated automatically by a bot._"}'
