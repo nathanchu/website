@@ -1,6 +1,6 @@
 import * as React from 'react'
 import codebackground from '../images/codebackground.svg'
-import Highlight from './Highlight'
+import Highlight from './highlight'
 import styles from '../css/index.module.css'
 
 const Main = () => (
