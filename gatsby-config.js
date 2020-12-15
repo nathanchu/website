@@ -1,6 +1,10 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: 'https://nathanchu.com'
+    title: "Nathan Chu",
+    titleTemplate: "%s | Nathan Chu",
+    description: "I'm Nathan Chu, a Web Developer (@nathanchu on GitHub)",
+    url: "https://nathanchu.com",
+    image: "/banner.png"
   },
   plugins: [
     'gatsby-plugin-image',
