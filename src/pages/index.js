@@ -1,6 +1,8 @@
 import * as React from 'react'
 import { Helmet } from 'react-helmet'
+// import Nav from '../components/nav'
 import Main from '../components/main'
+import About from '../components/about'
 import '../css/reset.css'
 import '../css/index.css'
 import SEO from '../components/seo'
@@ -15,7 +17,9 @@ const Home = () => {
         />
       </Helmet>
       <SEO title="Home" />
+      {/* <Nav /> */}
       <Main />
+      <About />
     </>
   )
 }

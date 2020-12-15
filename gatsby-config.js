@@ -2,7 +2,8 @@ module.exports = {
   siteMetadata: {
     title: 'Nathan Chu',
     titleTemplate: '%s | Nathan Chu',
-    description: "I'm Nathan Chu, a Web Developer (@nathanchu on GitHub)",
+    description:
+      "Hello, World! I'm Nathan Chu and this is my corner of the Internet. I'm a full stack web developer who's worked with JavaScript, React, Node.js, HTML, and CSS. You can find me as @nathanchu on GitHub!",
     siteUrl: 'https://nathanchu.com',
     url: 'https://nathanchu.com',
     image: '/banner.png'
@@ -13,14 +14,14 @@ module.exports = {
     'gatsby-plugin-sitemap',
     'gatsby-plugin-offline',
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: 'gatsby-plugin-manifest',
       options: {
-        name: `Nathan Chu`,
-        short_name: `Nathan Chu`,
-        start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `#4169e1`,
-        display: `browser`,
+        name: 'Nathan Chu',
+        short_name: 'Nathan Chu',
+        start_url: '/',
+        background_color: '#ffffff',
+        theme_color: '#4169e1',
+        display: 'minimal-ui',
         icon: './src/images/codebackground.svg'
       }
     },

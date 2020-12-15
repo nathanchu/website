@@ -1,0 +1,11 @@
+.nav {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 50px;
+  background-color: var(--bg-color);
+  box-shadow: 0 0 50px -15px var(--color);
+}

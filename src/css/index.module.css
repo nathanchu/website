@@ -1,5 +1,5 @@
 .main {
-  height: calc(100vh - 200px);
+  height: fit-content;
   width: calc(100vw - 200px);
   flex-direction: column;
   margin: 100px;
@@ -13,7 +13,7 @@
 }
 .codebackground {
   z-index: -1;
-  height: calc(100vh - 400px);
+  height: 400px;
   position: absolute;
   top: 50%;
   right: 250px;
@@ -42,9 +42,15 @@
     flex-direction: row;
   }
   .codebackground {
-    height: calc(100vh - 200px);
+    height: 600px;
   }
   .header {
     text-align: left;
+  }
+}
+@media (min-width: 1400px) {
+  .main {
+    margin: 100px 200px;
+    width: calc(100vw - 400px);
   }
 }
