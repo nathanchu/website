@@ -9,7 +9,7 @@ import SEO from '../components/seo'
 
 const Home = () => {
   return (
-    <>
+    <div className="home">
       <Helmet>
         <link
           href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&amp;family=family=Source+Code+Pro&amp;display=swap"
@@ -20,7 +20,7 @@ const Home = () => {
       {/* <Nav /> */}
       <Main />
       <About />
-    </>
+    </div>
   )
 }
 
