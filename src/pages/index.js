@@ -14,6 +14,7 @@ const Home = () => {
           href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&amp;family=family=Source+Code+Pro&amp;display=swap"
           rel="stylesheet"
         />
+        <title>Nathan Chu | Web Developer</title>
       </Helmet>
       <Main />
     </>
