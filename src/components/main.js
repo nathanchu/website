@@ -2,10 +2,10 @@ import * as React from 'react'
 import codebackground from '../images/codebackground.svg'
 import Highlight from './highlight'
 import { aProps } from '../utilities'
-import styles from '../css/index.module.css'
+import styles from '../css/main.module.css'
 
 const Main = () => (
-  <div className={styles.main}>
+  <div className={styles.main} id="home">
     <div className={styles.header}>
       <h1>Nathan Chu</h1>
       <hr />

@@ -40,6 +40,7 @@
 @media (min-width: 1200px) {
   .main {
     flex-direction: row;
+    margin-top: 200px;
   }
   .codebackground {
     height: 600px;
@@ -51,6 +52,7 @@
 @media (min-width: 1400px) {
   .main {
     margin: 100px 200px;
+    margin-top: 200px;
     width: calc(100vw - 400px);
   }
 }

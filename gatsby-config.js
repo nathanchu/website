@@ -6,7 +6,9 @@ module.exports = {
       "Hello, World! I'm Nathan Chu and this is my corner of the Internet. I'm a full stack web developer who's worked with JavaScript, React, Node.js, HTML, and CSS. You can find me as @nathanchu on GitHub!",
     siteUrl: 'https://nathanchu.com',
     url: 'https://nathanchu.com',
-    image: '/banner.png'
+    image: '/banner.png',
+    sha: `${process.env.VERCEL_GIT_COMMIT_SHA}`,
+    repo: `${process.env.VERCEL_GIT_REPO_OWNER}/${process.env.VERCEL_GIT_REPO_SLUG}`
   },
   plugins: [
     'gatsby-plugin-image',

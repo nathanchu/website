@@ -3,7 +3,7 @@ import styles from '../css/about.module.css'
 import { aProps } from '../utilities'
 
 const About = () => (
-  <div className={styles.about}>
+  <div className={styles.about} id="about">
     <h1>About Me</h1>
     <br />
     <p>
@@ -12,7 +12,8 @@ const About = () => (
         (@nathanchu on GitHub)
       </a>{' '}
       and this is my corner of the Internet. I'm a full stack web developer
-      who's worked with JavaScript, React, Node.js, HTML, and CSS.
+      who's worked with JavaScript, React, Node.js, HTML, and CSS. I've also
+      worked some with PHP and SQL.
     </p>
   </div>
 )

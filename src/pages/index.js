@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Helmet } from 'react-helmet'
-// import Nav from '../components/nav'
+import Nav from '../components/nav'
 import Main from '../components/main'
 import About from '../components/about'
 import '../css/reset.css'
@@ -17,7 +17,7 @@ const Home = () => {
         />
       </Helmet>
       <SEO title="Home" />
-      {/* <Nav /> */}
+      <Nav />
       <Main />
       <About />
     </div>
