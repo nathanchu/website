@@ -21,7 +21,7 @@ module.exports = {
         start_url: '/',
         background_color: '#ffffff',
         theme_color: '#4169e1',
-        display: 'minimal-ui',
+        display: 'standalone',
         icon: './src/images/codebackground.svg'
       }
     },

@@ -1,6 +1,7 @@
 import * as React from 'react'
 import codebackground from '../images/codebackground.svg'
 import Highlight from './highlight'
+import { aProps } from '../utilities'
 import styles from '../css/index.module.css'
 
 const Main = () => (
@@ -9,7 +10,10 @@ const Main = () => (
       <h1>Nathan Chu</h1>
       <hr />
       <h2>
-        A web developer | <a href="https://github.com/nathanchu">GitHub</a>
+        A web developer |{' '}
+        <a {...aProps} href="https://github.com/nathanchu">
+          GitHub
+        </a>
       </h2>
     </div>
     <div className={styles.codewrapper}>
