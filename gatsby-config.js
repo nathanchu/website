@@ -22,7 +22,10 @@ module.exports = {
         background_color: '#ffffff',
         theme_color: '#4169e1',
         display: 'minimal-ui',
-        icon: './src/images/codebackground.svg'
+        icon: './src/images/codebackground.svg',
+        icon_options: {
+          purpose: 'any maskable'
+        }
       }
     },
     'gatsby-plugin-mdx',
