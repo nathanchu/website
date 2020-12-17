@@ -1,12 +1,14 @@
 :root {
-  --bg-color: #fafafa;
-  --color: #191919;
+  --white: #fafafa;
+  --black: #191919;
+  --bg-color: var(--white);
+  --color: var(--black);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg-color: #191919;
-    --color: #fafafa;
+    --bg-color: var(--black);
+    --color: var(--white);
   }
 }
 

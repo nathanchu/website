@@ -3,7 +3,7 @@ module.exports = {
     title: 'Nathan Chu',
     titleTemplate: '%s | Nathan Chu',
     description:
-      "Hello, World! I'm Nathan Chu and this is my corner of the Internet. I'm a full stack web developer who's worked with JavaScript, React, Node.js, HTML, and CSS. You can find me as @nathanchu on GitHub!",
+      "Hello, World! I'm Nathan Chu (@nathanchu on GitHub) and this website is my corner of the Internet. I'm a full stack web developer who's worked with JavaScript, React, Node.js, HTML, and CSS. I've also worked some with PHP and SQL.",
     siteUrl: 'https://nathanchu.com',
     url: 'https://nathanchu.com',
     image: '/banner.png',
