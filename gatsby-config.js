@@ -7,8 +7,12 @@ module.exports = {
     siteUrl: 'https://nathanchu.com',
     url: 'https://nathanchu.com',
     image: '/banner.png',
-    sha: `${process.env.VERCEL_GIT_COMMIT_SHA}`,
-    repo: `${process.env.VERCEL_GIT_REPO_OWNER}/${process.env.VERCEL_GIT_REPO_SLUG}`
+    sha: process.env.GIT_SHA || process.env.VERCEL_GIT_COMMIT_SHA || null,
+    repo:
+      process.env.GIT_REPO ||
+      (process.env.VERCEL_GIT_REPO_OWNER && process.env.VERCEL_GIT_REPO_SLUG
+        ? `${process.env.VERCEL_GIT_REPO_OWNER}/${process.env.VERCEL_GIT_REPO_SLUG}`
+        : null)
   },
   plugins: [
     'gatsby-plugin-image',
@@ -48,6 +52,7 @@ module.exports = {
         path: './src/pages/'
       },
       __key: 'pages'
-    }
+    },
+    'gatsby-plugin-styled-components'
   ]
 }

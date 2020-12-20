@@ -25,7 +25,11 @@ const query = graphql`
 `
 
 const Nav = () => {
-  const { site: { siteMetadata: { sha, repo } } } = useStaticQuery(query)
+  const {
+    site: {
+      siteMetadata: { sha, repo }
+    }
+  } = useStaticQuery(query)
   return (
     <div className={styles.nav}>
       <span className={styles.title}>Nathan Chu</span>
@@ -41,8 +45,16 @@ const Nav = () => {
               {link ? <Link to={link}>{name}</Link> : name}
             </li>
           ))}
-          <li className={`${styles.extraLink} ${styles.displayLink}`}>|</li>
-          <li className={styles.extraLink}><a href={`https://github.com/${repo}/commit/${sha}`}>{sha.substring(0, 7)}</a></li>
+          {sha && repo && (
+            <>
+              <li className={`${styles.extraLink} ${styles.displayLink}`}>|</li>
+              <li className={styles.extraLink}>
+                <a href={`https://github.com/${repo}/commit/${sha}`}>
+                  {sha.substring(0, 7)}
+                </a>
+              </li>
+            </>
+          )}
         </ul>
       </nav>
     </div>

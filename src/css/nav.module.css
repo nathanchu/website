@@ -10,8 +10,8 @@
   right: 0;
   bottom: 0;
   height: 75px;
-  background-color: var(--bg-color);
-  box-shadow: 0 0 50px -15px var(--black);
+  background-color: var(--card-bg-color);
+  box-shadow: 0 0 50px -25px var(--black);
 }
 .title {
   font-weight: bold;

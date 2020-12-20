@@ -11,9 +11,9 @@ const About = () => (
       <a {...aProps} href="https://github.com/nathanchu">
         (@nathanchu on GitHub)
       </a>{' '}
-      and this website is my corner of the Internet. I'm a full stack web developer
-      who's worked with JavaScript, React, Node.js, HTML, and CSS. I've also
-      worked some with PHP and SQL.
+      and this website is my corner of the Internet. I'm a full stack web
+      developer who's worked with JavaScript, React, Node.js, HTML, and CSS.
+      I've also worked some with PHP and SQL.
     </p>
   </div>
 )

@@ -5,9 +5,9 @@
   "description": "My Gatsby site",
   "author": "Nathan Chu",
   "scripts": {
-    "develop": "gatsby develop",
-    "start": "gatsby develop",
-    "build": "gatsby build",
+    "develop": "node build.js && gatsby develop",
+    "start": "node build.js && gatsby develop",
+    "build": "node build.js && gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean"
   },
@@ -15,6 +15,7 @@
   "dependencies": {
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
+    "babel-plugin-styled-components": "^1.12.0",
     "gatsby": "^2.26.1",
     "gatsby-plugin-image": "^0.3.1",
     "gatsby-plugin-manifest": "^2.8.0",
@@ -23,12 +24,17 @@
     "gatsby-plugin-react-helmet": "^3.6.0",
     "gatsby-plugin-sharp": "^2.10.1",
     "gatsby-plugin-sitemap": "^2.8.0",
+    "gatsby-plugin-styled-components": "^3.7.0",
     "gatsby-source-filesystem": "^2.7.0",
     "gatsby-transformer-sharp": "^2.8.0",
     "prettier": "^2.2.1",
     "prism-react-renderer": "^1.1.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-helmet": "^6.1.0"
+    "react-helmet": "^6.1.0",
+    "styled-components": "^5.2.1"
+  },
+  "devDependencies": {
+    "puppeteer": "^5.5.0"
   }
 }
