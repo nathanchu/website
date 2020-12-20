@@ -35,6 +35,6 @@
     "styled-components": "^5.2.1"
   },
   "devDependencies": {
-    "puppeteer": "^5.5.0"
+    "playwright": "^1.7.0"
   }
 }
