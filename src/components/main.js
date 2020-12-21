@@ -34,7 +34,7 @@ const Main = () => (
           )}
           className={styles.codeblock}
         />
-        <img src={codebackground} alt="" className={styles.codebackground} />
+        <img src={codebackground} alt="Abstract Triangle Background" className={styles.codebackground} />
       </div>
     </div>
   </div>

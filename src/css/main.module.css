@@ -3,6 +3,7 @@
   width: calc(100vw - 200px);
   flex-direction: column;
   margin: 100px;
+  margin-top: 150px;
   display: flex;
   align-items: center;
   justify-content: space-between;

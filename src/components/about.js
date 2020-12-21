@@ -3,7 +3,8 @@ import styles from '../css/about.module.css'
 import { aProps } from '../utilities'
 
 const About = () => (
-  <div className={styles.about} id="about">
+  <div className={styles.about}>
+    <span className="anchor" id="about" />
     <h1>About Me</h1>
     <br />
     <p>

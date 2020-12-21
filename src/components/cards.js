@@ -29,6 +29,7 @@ const ImageCard = styled.div`
   border-radius: 10px;
   margin: 15px;
   margin-left: -85px;
+  overflow: hidden;
   @media (min-width: 992px) {
     display: block;
   }

@@ -5,9 +5,9 @@
   "description": "My Gatsby site",
   "author": "Nathan Chu",
   "scripts": {
-    "develop": "node build.js && gatsby develop",
-    "start": "node build.js && gatsby develop",
-    "build": "node build.js && gatsby build",
+    "develop": "node -e \"try{require('./build')}catch(e){console.error(e)}\" && gatsby develop",
+    "start": "node -e \"try{require('./build')}catch(e){console.error(e)}\" && gatsby develop",
+    "build": "node -e \"try{require('./build')}catch(e){console.error(e)}\" && gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean"
   },
