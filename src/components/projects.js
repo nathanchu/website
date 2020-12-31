@@ -54,7 +54,7 @@ const Projects = () => {
       <span className="anchor" id="projects" aria-hidden />
       <h1 className="font-bold text-6xl mt-12 mb-6">Projects</h1>
       {projects.map(({ title, repo, website, description, image }, i) => (
-        <div className="flex items-center max-w-5xl" key={i}>
+        <div className="flex items-center" key={i}>
           <Project title={title} repo={repo} website={website} description={description} />
           <div className="shadow-card hidden bg-gray-50 dark:bg-black-light rounded-lg m-4 -ml-24 overflow-hidden lg:block">
             <a {...aProps} href={website}>
