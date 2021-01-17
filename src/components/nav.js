@@ -13,6 +13,13 @@ const nav = [
   {
     name: 'Projects',
     link: '/#projects'
+  },
+  {
+    name: '|'
+  },
+  {
+    name: 'Posts',
+    link: '/posts'
   }
 ]
 
@@ -41,11 +48,19 @@ const Nav = () => {
           {nav.map(({ name, link }, index) => (
             <li
               key={index}
-              className={`${link && link.includes('#') ? "hidden sm:block" : ""} ${
-                !link ? "hidden sm:block mx-1" : ""
-              } mx-6`}
+              className={`${
+                link && link.includes('#') ? 'hidden sm:block' : ''
+              } ${!link ? 'hidden sm:block mx-1' : 'mx-6'}`}
             >
-              {link ? <Link className="no-underline" to={link}>{name}</Link> : name}
+              {link
+                ? (
+                <Link className="no-underline" to={link}>
+                  {name}
+                </Link>
+                  )
+                : (
+                    name
+                  )}
             </li>
           ))}
           {sha && repo && (

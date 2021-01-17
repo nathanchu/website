@@ -26,7 +26,6 @@ try {
           return file
         } catch (e) {
           console.error(e)
-          return
         }
       }
       await Promise.all(Object.entries(obj).map(e => screenshot(...e)))
@@ -34,7 +33,6 @@ try {
       return
     } catch (e) {
       console.error(e)
-      return
     }
   }
 
@@ -44,10 +42,15 @@ try {
       'src/images/projects/website.png'
     ],
     'https://weather.rayyansaidi.com/': 'src/images/projects/weather.png',
-    'https://github.com/rayyansaidi-com/app': 'src/images/projects/rayyan-saidi-desktop.png'
+    'https://github.com/rayyansaidi-com/app':
+      'src/images/projects/rayyan-saidi-desktop.png'
   })
-    .then(() => { console.log('Success! Page Thumbnails Generated!') })
-    .catch(e => { console.error(e) })
+    .then(() => {
+      console.log('Success! Page Thumbnails Generated!')
+    })
+    .catch(e => {
+      console.error(e)
+    })
 } catch (e) {
   console.error(e)
 }

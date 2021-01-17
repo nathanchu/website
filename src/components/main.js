@@ -4,7 +4,10 @@ import Highlight from './highlight'
 import { aProps } from '../utilities'
 
 const Main = () => (
-  <div className="flex flex-col m-24 mt-36 items-center justify-between lg:flex-row lg:mt-48 2xl:m-48 2xl:mb-24" id="home">
+  <div
+    className="flex flex-col m-24 mt-36 items-center justify-between lg:flex-row lg:mt-48 2xl:m-48 2xl:mb-24"
+    id="home"
+  >
     <div className="text-center xl:text-left">
       <h1 className="text-7xl font-bold">Nathan Chu</h1>
       <br />
@@ -34,7 +37,11 @@ const Main = () => (
         )}
         className="font-mono rounded-xl p-6 text-xl leading-6"
       />
-      <img src={codebackground} alt="Abstract Triangle Background" className="absolute top-1/2 -z-10 h-auto w-52 right-64 transform -translate-y-1/2 lg:w-80" />
+      <img
+        src={codebackground}
+        alt="Abstract Triangle Background"
+        className="absolute top-1/2 -z-10 h-auto w-52 right-64 transform -translate-y-1/2 lg:w-80"
+      />
     </div>
   </div>
 )

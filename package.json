@@ -5,17 +5,21 @@
   "description": "My Gatsby site",
   "author": "Nathan Chu",
   "scripts": {
-    "develop": "node -e \"try{require('./build')}catch(e){console.error(e)}\" && gatsby develop",
-    "start": "node -e \"try{require('./build')}catch(e){console.error(e)}\" && gatsby develop",
+    "develop": "node -e \"try{require('./build')}catch(e){console.error(e)}\" && gatsby develop -H 0.0.0.0",
+    "dev": "node -e \"try{require('./build')}catch(e){console.error(e)}\" && gatsby develop -H 0.0.0.0",
+    "start": "node -e \"try{require('./build')}catch(e){console.error(e)}\" && gatsby develop -H 0.0.0.0",
     "build": "node -e \"try{require('./build')}catch(e){console.error(e)}\" && gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "lint": "prettier --check . && eslint .",
+    "lint:fix": "prettier --write . && eslint --fix ."
   },
   "license": "MIT",
   "dependencies": {
     "@fontsource/montserrat": "^4.0.1",
     "@fontsource/source-code-pro": "^4.0.1",
     "autoprefixer": "^10.1.0",
+    "disqus-react": "^1.0.10",
     "gatsby": "^2.26.1",
     "gatsby-plugin-image": "^0.3.1",
     "gatsby-plugin-manifest": "^2.8.0",
@@ -24,16 +28,28 @@
     "gatsby-plugin-react-helmet": "^3.6.0",
     "gatsby-plugin-sharp": "^2.10.1",
     "gatsby-plugin-sitemap": "^2.8.0",
+    "gatsby-remark-autolink-headers": "^2.8.0",
+    "gatsby-remark-embedder": "^4.1.0",
+    "gatsby-remark-images": "^3.8.1",
+    "gatsby-remark-prismjs": "^3.10.0",
     "gatsby-source-filesystem": "^2.7.0",
+    "gatsby-transformer-remark": "^2.13.1",
     "gatsby-transformer-sharp": "^2.8.0",
     "postcss": "^8.2.1",
     "prism-react-renderer": "^1.1.1",
+    "prismjs": "^1.23.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0",
     "tailwindcss": "^2.0.2"
   },
   "devDependencies": {
+    "eslint": "^7.18.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.22.0",
     "playwright": "^1.7.0",
     "prettier": "^2.2.1"
   }

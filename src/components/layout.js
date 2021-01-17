@@ -17,12 +17,17 @@ export default ({ title, description, image, article, children, ...rest }) => {
   //   const localTheme = window.localStorage.getItem('theme')
   //   if (localTheme) {
   //     if (localTheme === 'dark') document.documentElement.classList.add('dark')
-  //     else document.documentElement.classList.remove('dark')  
+  //     else document.documentElement.classList.remove('dark')
   //   }
   // }
   return (
     <div {...rest}>
-      <SEO title={title} description={description} image={image} article={article} />
+      <SEO
+        title={title}
+        description={description}
+        image={image}
+        article={article}
+      />
       <Nav />
       {children}
     </div>

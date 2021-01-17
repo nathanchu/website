@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-export default function HTML(props) {
+export default function HTML (props) {
   return (
     <html {...props.htmlAttributes} lang="en">
       <head>
@@ -17,7 +17,8 @@ export default function HTML(props) {
         <script
           type="text/javascript"
           dangerouslySetInnerHTML={{
-            __html: '(function(){"use strict";var _paq=window._paq=window._paq||[];_paq.push(["trackPageView"]),_paq.push(["enableLinkTracking"]),function(){var a="//analytics.nathanchu.com/";_paq.push(["setTrackerUrl",a+"matomo.php"]),_paq.push(["setSiteId","1"]);var e=(t=document).createElement("script"),t=t.getElementsByTagName("script")[0];e.type="text/javascript",e.async=!0,e.src=a+"matomo.js",t.parentNode.insertBefore(e,t)}();})();'
+            __html:
+              '(function(){"use strict";var _paq=window._paq=window._paq||[];_paq.push(["trackPageView"]),_paq.push(["enableLinkTracking"]),function(){var a="//analytics.nathanchu.com/";_paq.push(["setTrackerUrl",a+"matomo.php"]),_paq.push(["setSiteId","1"]);var e=(t=document).createElement("script"),t=t.getElementsByTagName("script")[0];e.type="text/javascript",e.async=!0,e.src=a+"matomo.js",t.parentNode.insertBefore(e,t)}();})();'
           }}
         />
         {/* End Matomo Code */}
@@ -25,7 +26,7 @@ export default function HTML(props) {
       <body {...props.bodyAttributes}>
         {props.preBodyComponents}
         <div
-          key={`body`}
+          key={'body'}
           id="___gatsby"
           dangerouslySetInnerHTML={{ __html: props.body }}
         />

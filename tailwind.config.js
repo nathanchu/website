@@ -27,11 +27,8 @@ const fractions = {
   '11/12': '91.666667'
 }
 
-const Fractions = (l, w, f = fractions) => Object.fromEntries(
-  Object.entries(f).map(
-    ([k, v]) => [l + '-' + k, v + w]
-  )
-)
+const Fractions = (l, w, f = fractions) =>
+  Object.fromEntries(Object.entries(f).map(([k, v]) => [l + '-' + k, v + w]))
 
 const width = Fractions('screen', 'vw')
 
@@ -47,9 +44,11 @@ module.exports = {
   darkMode: 'media',
   theme: {
     fontFamily: {
-      'sans': 'Montserrat, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
-      'serif': 'ui-serif, Georgia, Cambria, "Times New Roman", Times, serif',
-      'mono': '"Source Code Pro", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace'
+      sans:
+        'Montserrat, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
+      serif: 'ui-serif, Georgia, Cambria, "Times New Roman", Times, serif',
+      mono:
+        '"Source Code Pro", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace'
     },
     extend: {
       colors: {
@@ -60,19 +59,19 @@ module.exports = {
         }
       },
       boxShadow: {
-        card: '0 0 10px rgba(0, 0, 0, 0.1)'
+        card: '0 0 20px rgba(0, 0, 0, 0.1)'
       },
       width: width,
-      minWidth: width,
       maxWidth: width,
       height: height,
       minHeight: height,
       maxHeight: height,
       spacing: spacing,
       zIndex: {
-        '-10': '-10',
+        '-10': '-10'
       },
       minWidth: {
+        ...width,
         none: 'none',
         0: '0rem',
         xs: '20rem',
@@ -89,11 +88,11 @@ module.exports = {
         full: '100%',
         min: 'min-content',
         max: 'max-content'
-      } 
-    },
+      }
+    }
   },
   variants: {
-    extend: {},
+    extend: {}
   },
-  plugins: [],
+  plugins: []
 }

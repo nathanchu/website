@@ -53,5 +53,22 @@ module.exports = {
       },
       __key: 'pages'
     },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'posts',
+        path: './content/posts'
+      }
+    },
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: [
+          'gatsby-remark-embedder',
+          'gatsby-remark-autolink-headers',
+          'gatsby-remark-prismjs'
+        ]
+      }
+    }
   ]
 }
