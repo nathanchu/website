@@ -9,14 +9,14 @@ export default ({ data }) => {
       <div className="mt-24">
         {data.allMarkdownRemark.edges.map(({ node }, i) => (
           <Link key={i} to={node.fields.slug}>
-            <div className="mx-auto max-w-4xl bg-gray-50 shadow-card dark:bg-black-light dark:text-gray-50 rounded-lg p-12">
+            <div className="mx-auto max-w-4xl bg-gray-50 shadow-card dark:bg-black-light dark:text-gray-50 rounded-lg p-12 my-16">
               <h1 className="text-4xl font-bold">{node.frontmatter.title}</h1>
               <br />
               <span className="text-sm text-gray-600 dark:text-gray-400">
                 {' '}
-                By: {node.frontmatter.author} | Date: June 14 | Tags: [{' '}
+                By: {node.frontmatter.author} | Date: {(new Date(node.frontmatter.date)).toDateString()} | Tags: [{' '}
                 {node.frontmatter.tags
-                  .map(e => e.charAt(0).toUpperCase() + e.substr(1))
+                  .map(e => `'${e.replace('\'', '\\\'')}'`)
                   .join(', ')}{' '}
                 ] |{' '}
                 <a href={node.fields.slug + '#disqus_thread'}>
@@ -29,7 +29,7 @@ export default ({ data }) => {
                       language: 'us_EN'
                     }}
                   >
-                    Conmments
+                    Comments
                   </CommentCount>
                 </a>
               </span>
@@ -52,7 +52,7 @@ export const query = graphql`
         siteUrl
       }
     }
-    allMarkdownRemark {
+    allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}) {
       edges {
         node {
           frontmatter {

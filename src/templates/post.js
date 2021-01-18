@@ -22,7 +22,7 @@ export default ({ data }) => {
     <Layout article title={data.markdownRemark.frontmatter.title}>
       <div>
         <div className="mt-32 md:px-24 mx-auto">
-          <div className="mx-auto max-w-3xl bg-gray-50 shadow-card dark:bg-black-light dark:text-gray-50 rounded-lg p-12 text-center">
+          <div className="mx-auto max-w-3xl bg-gray-50 shadow-card dark:bg-black-light dark:text-gray-50 rounded-lg p-12 text-center mb-12">
             <h1 className="text-6xl font-bold">
               {data.markdownRemark.frontmatter.title}
             </h1>
