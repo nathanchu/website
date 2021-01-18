@@ -74,6 +74,7 @@ export const query = graphql`
     }
     markdownRemark(id: { eq: $id }) {
       frontmatter {
+        date
         title
         tags
         author
