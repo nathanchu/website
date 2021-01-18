@@ -19,19 +19,17 @@ export default ({ data }) => {
                   .map(e => `'${e.replace('\'', '\\\'')}'`)
                   .join(', ')}{' '}
                 ] |{' '}
-                <a href={node.fields.slug + '#disqus_thread'}>
-                  <CommentCount
-                    shortname="nathanchu"
-                    config={{
-                      title: node.frontmatter.title,
-                      url: data.site.siteMetadata.siteUrl + node.fields.slug,
-                      identifier: node.fields.slug,
-                      language: 'us_EN'
-                    }}
-                  >
-                    Comments
-                  </CommentCount>
-                </a>
+                <CommentCount
+                  shortname="nathanchu"
+                  config={{
+                    title: node.frontmatter.title,
+                    url: data.site.siteMetadata.siteUrl + node.fields.slug,
+                    identifier: node.fields.slug,
+                    language: 'us_EN'
+                  }}
+                >
+                  Comments
+                </CommentCount>
               </span>
               <br />
               <br />

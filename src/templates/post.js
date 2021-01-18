@@ -16,8 +16,6 @@ export default ({ data }) => {
     }
   }
 
-  console.log(data.site.siteMetadata.siteUrl + data.markdownRemark.fields.slug)
-
   return (
     <Layout article title={data.markdownRemark.frontmatter.title}>
       <div>
