@@ -27,7 +27,7 @@ export default ({ data }) => {
             <br />
             <span className="text-sm text-gray-600 dark:text-gray-400">
               {' '}
-              By: {data.markdownRemark.frontmatter.author} | Date: June 14 |
+              By: {data.markdownRemark.frontmatter.author} | Date: {(new Date(data.markdownRemark.frontmatter.date)).toDateString()} |
               Tags: [{' '}
               {data.markdownRemark.frontmatter.tags
                 .map(e => e.charAt(0).toUpperCase() + e.substr(1))
