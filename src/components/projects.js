@@ -13,7 +13,9 @@ const projects = [
       <StaticImage
         src="../images/projects/website.png"
         alt="Screenshot of My Website"
+        formats={['auto', 'webp', 'avif']}
         width={400}
+        height={300}
       />
     )
   },
@@ -27,7 +29,9 @@ const projects = [
       <StaticImage
         src="../images/projects/weather.png"
         alt="Screenshot of Weather App"
+        formats={['auto', 'webp', 'avif']}
         width={400}
+        height={300}
       />
     )
   },
@@ -41,7 +45,9 @@ const projects = [
       <StaticImage
         src="../images/projects/rayyan-saidi-desktop.png"
         alt="Screenshot of Rayyan Saidi Desktop"
+        formats={['auto', 'webp', 'avif']}
         width={400}
+        height={300}
       />
     )
   }
