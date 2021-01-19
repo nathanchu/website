@@ -15,7 +15,21 @@ module.exports = {
         : null)
   },
   plugins: [
-    'gatsby-plugin-postcss',
+    {
+      resolve: 'gatsby-plugin-postcss',
+      options: {
+        postCssPlugins: [
+          {
+            postcssPlugin: true,
+            Declaration: {
+              'font-display': (node) => {
+                if (node.parent.name === 'font-face' && node.parent.type === 'atrule') node.value = 'optional'
+              }
+            }
+          }
+        ],
+      },
+    },
     'gatsby-plugin-image',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',
