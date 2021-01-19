@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { Link, graphql, useStaticQuery } from 'gatsby'
+import Search from './search'
 
 const nav = [
   {
@@ -90,6 +91,10 @@ const Nav = () => {
               Dark
             </label>
           </li> */}
+          <li className="hidden md:block mx-1">|</li>
+          <li className="hidden md:block mx-6">
+            <Search indices={[{name: 'website', title: 'website'}]} />
+          </li>
         </ul>
       </nav>
     </div>

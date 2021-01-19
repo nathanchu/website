@@ -17,10 +17,15 @@
   "license": "MIT",
   "dependencies": {
     "@fontsource/montserrat": "^4.0.1",
+    "@fontsource/rubik": "^4.1.0",
     "@fontsource/source-code-pro": "^4.0.1",
+    "@styled-icons/fa-solid": "^10.23.0",
+    "algoliasearch": "^4.8.3",
     "autoprefixer": "^10.1.0",
     "disqus-react": "^1.0.10",
+    "dotenv": "^8.2.0",
     "gatsby": "^2.26.1",
+    "gatsby-plugin-algolia": "^0.16.2",
     "gatsby-plugin-image": "^0.3.1",
     "gatsby-plugin-manifest": "^2.8.0",
     "gatsby-plugin-offline": "^3.6.0",
@@ -28,6 +33,7 @@
     "gatsby-plugin-react-helmet": "^3.6.0",
     "gatsby-plugin-sharp": "^2.10.1",
     "gatsby-plugin-sitemap": "^2.8.0",
+    "gatsby-plugin-styled-components": "^3.8.0",
     "gatsby-remark-autolink-headers": "^2.8.0",
     "gatsby-remark-embedder": "^4.1.0",
     "gatsby-remark-images": "^3.8.1",
@@ -41,6 +47,8 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0",
+    "react-instantsearch-dom": "^6.8.2",
+    "styled-components": "^5.2.1",
     "tailwindcss": "^2.0.2"
   },
   "devDependencies": {
