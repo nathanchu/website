@@ -13,13 +13,14 @@ const Wrapper = styled.div`
 const Form = styled.form`
   background-color: #fff;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   display: inline-block;
   border-radius: 8px;
   margin: 8px;
   padding: 8px;
   text-align: center;
   input, button {
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
     padding: 8px;
     margin: 8px;
     border-radius: 8px;
