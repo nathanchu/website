@@ -1114,11 +1114,6 @@
   resolved "https://registry.yarnpkg.com/@fontsource/montserrat/-/montserrat-4.1.0.tgz#a5f4d334b3702699af88c5e6c5c6972095c2c947"
   integrity sha512-Dqd+sGHfKg3TGlNs7f8VFQLjSgLcu6ZzlDS10rVDIs/YZVCWt9BMgdLF3n19QQt8HsuUteK+YOhswGL23W3Lgw==
 
-"@fontsource/rubik@^4.1.0":
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/@fontsource/rubik/-/rubik-4.1.0.tgz#2e7064ff22b588690bb1190bdbf36c4396c05798"
-  integrity sha512-hjLbittC4UeHwcHZSYke3G4R2mJQnsApaY+39W2QjJQayGmXc5MADlyapdukqxcHnyciJHYhdSZRKzV0Lb7elw==
-
 "@fontsource/source-code-pro@^4.0.1":
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/@fontsource/source-code-pro/-/source-code-pro-4.1.0.tgz#866d5184347f8784e6ebc6bda44871f39b34a426"
