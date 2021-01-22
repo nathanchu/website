@@ -1,6 +1,6 @@
-import React from "react"
-import { connectSearchBox } from "react-instantsearch-dom"
-import { Search as SearchIcon } from "@styled-icons/fa-solid"
+import React from 'react'
+import { connectSearchBox } from 'react-instantsearch-dom'
+import { Search as SearchIcon } from '@styled-icons/fa-solid'
 
 export default connectSearchBox(
   ({ refine, currentRefinement, className, onFocus }) => (

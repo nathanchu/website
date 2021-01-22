@@ -1,5 +1,5 @@
-import styled, { css } from "styled-components"
-import SearchResult from "./search-result"
+import styled, { css } from 'styled-components'
+import SearchResult from './search-result'
 
 const Popover = css`
   max-height: 80vh;
@@ -19,7 +19,7 @@ const Popover = css`
 `
 
 export default styled(SearchResult)`
-  display: ${props => (props.show ? `block` : `none`)};
+  display: ${props => (props.show ? 'block' : 'none')};
   ${Popover}
 
   .HitCount {

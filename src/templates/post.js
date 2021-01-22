@@ -1,5 +1,5 @@
 import { graphql } from 'gatsby'
-import * as React from 'react'
+import React from 'react'
 import Layout from '../components/layout'
 import './post.css'
 import '../css/nord.css'
@@ -27,7 +27,8 @@ export default ({ data }) => {
             <br />
             <span className="text-sm text-gray-600 dark:text-gray-400">
               {' '}
-              By: {data.markdownRemark.frontmatter.author} | Date: {(new Date(data.markdownRemark.frontmatter.date)).toDateString()} |
+              By: {data.markdownRemark.frontmatter.author} | Date:{' '}
+              {new Date(data.markdownRemark.frontmatter.date).toDateString()} |
               Tags: [{' '}
               {data.markdownRemark.frontmatter.tags
                 .map(e => e.charAt(0).toUpperCase() + e.substr(1))

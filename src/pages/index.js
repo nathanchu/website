@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import Main from '../components/main'
 import About from '../components/about'
 import Projects from '../components/projects'

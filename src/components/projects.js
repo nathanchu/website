@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
 import { aProps } from '../utilities'
 

@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/layout'
 import { CommentCount } from 'disqus-react'
@@ -14,9 +14,10 @@ export default ({ data }) => {
               <br />
               <span className="text-sm text-gray-600 dark:text-gray-400">
                 {' '}
-                By: {node.frontmatter.author} | Date: {(new Date(node.frontmatter.date)).toDateString()} | Tags: [{' '}
+                By: {node.frontmatter.author} | Date:{' '}
+                {new Date(node.frontmatter.date).toDateString()} | Tags: [{' '}
                 {node.frontmatter.tags
-                  .map(e => `'${e.replace('\'', '\\\'')}'`)
+                  .map(e => `'${e.replace("'", "\\'")}'`)
                   .join(', ')}{' '}
                 ] |{' '}
                 <CommentCount
@@ -50,7 +51,7 @@ export const query = graphql`
         siteUrl
       }
     }
-    allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}) {
+    allMarkdownRemark(sort: { fields: frontmatter___date, order: DESC }) {
       edges {
         node {
           frontmatter {

@@ -16,13 +16,16 @@ module.exports = [
         }
       }
     }`,
-    transformer: ({ data }) => data.pages.edges.map(({ node: { id, frontmatter, fields, ...rest } }) => ({
-        objectID: id,
-        ...frontmatter,
-        ...fields,
-        ...rest,
-    })),
+    transformer: ({ data }) =>
+      data.pages.edges.map(
+        ({ node: { id, frontmatter, fields, ...rest } }) => ({
+          objectID: id,
+          ...frontmatter,
+          ...fields,
+          ...rest
+        })
+      ),
     indexName: 'website',
-    settings: { attributesToSnippet: ['excerpt:20'] },
-  },
+    settings: { attributesToSnippet: ['excerpt:20'] }
+  }
 ]

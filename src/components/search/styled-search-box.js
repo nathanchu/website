@@ -1,5 +1,5 @@
-import styled, { css } from "styled-components"
-import SearchBox from "./search-box"
+import styled, { css } from 'styled-components'
+import SearchBox from './search-box'
 
 const open = css`
   width: 10em;
@@ -28,7 +28,7 @@ export default styled(SearchBox)`
 
   .SearchInput {
     outline: none;
-    border: ${({ hasFocus }) => (hasFocus ? "auto" : "none")};
+    border: ${({ hasFocus }) => (hasFocus ? 'auto' : 'none')};
     font-size: 1em;
     transition: 100ms;
     border-radius: 4px;

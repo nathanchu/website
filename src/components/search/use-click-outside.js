@@ -1,6 +1,6 @@
-import { useEffect } from "react"
+import { useEffect } from 'react'
 
-const events = [`mousedown`, `touchstart`]
+const events = ['mousedown', 'touchstart']
 
 export default (ref, onClickOutside) => {
   const isOutside = element => !ref.current || !ref.current.contains(element)

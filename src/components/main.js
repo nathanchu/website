@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import codebackground from '../images/codebackground.svg'
 import Highlight from './highlight'
 import { aProps } from '../utilities'

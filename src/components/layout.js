@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import Nav from './nav'
 import SEO from './seo'
 

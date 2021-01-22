@@ -12,7 +12,8 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "lint": "prettier --check . && eslint .",
-    "lint:fix": "prettier --write . && eslint --fix ."
+    "lint:fix": "prettier --write . && eslint --fix .",
+    "vercel-build": "gatsby clean && node -e \"try{require('./build')}catch(e){console.error(e)}\" && gatsby build"
   },
   "license": "MIT",
   "dependencies": {
