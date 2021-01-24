@@ -18,12 +18,9 @@ exports.createSchemaCustomization = ({ actions: { createTypes } }) =>
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const query = await graphql(`
     query Posts {
-      allMarkdownRemark {
+      allMdx {
         edges {
           node {
-            frontmatter {
-              tags
-            }
             id
             fields {
               slug
@@ -43,7 +40,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   const { createPage } = actions
 
-  query.data.allMarkdownRemark.edges.forEach(({ node }) => {
+  query.data.allMdx.edges.forEach(({ node }) => {
     createPage({
       path: node.fields.slug,
       component: require.resolve('./src/templates/post'),
@@ -65,7 +62,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
 
-  if (node.internal.type === 'MarkdownRemark') {
+  if (node.internal.type === 'Mdx') {
     const value = path.posix.join(
       '/posts',
       createFilePath({

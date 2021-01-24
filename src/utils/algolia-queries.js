@@ -1,7 +1,7 @@
 module.exports = [
   {
     query: `{
-      pages: allMarkdownRemark {
+      pages: allMdx {
         edges {
           node {
             id
