@@ -10,7 +10,7 @@ export default ({ data }) => {
         {data.allMarkdownRemark.edges.map(({ node }, i) => (
           <Link key={i} to={node.fields.slug}>
             <div className="mx-auto max-w-4xl bg-gray-50 shadow-card dark:bg-black-light dark:text-gray-50 rounded-lg p-12 my-16">
-              <h1 className="text-4xl font-bold">{node.frontmatter.title}</h1>
+              <h1 className="text-4xl font-bold font-title">{node.frontmatter.title}</h1>
               <br />
               <span className="text-sm text-gray-600 dark:text-gray-400">
                 {' '}

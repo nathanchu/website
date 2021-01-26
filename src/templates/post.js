@@ -21,7 +21,7 @@ export default ({ data }) => {
       <div>
         <div className="mt-32 md:px-24 mx-auto">
           <div className="mx-auto max-w-3xl bg-gray-50 shadow-card dark:bg-black-light dark:text-gray-50 rounded-lg p-12 text-center mb-12">
-            <h1 className="text-6xl font-bold">
+            <h1 className="text-6xl font-bold font-title">
               {data.markdownRemark.frontmatter.title}
             </h1>
             <br />

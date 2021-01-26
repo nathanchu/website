@@ -1109,6 +1109,11 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
+"@fontsource/lato@^4.1.0":
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/@fontsource/lato/-/lato-4.1.0.tgz#a510e063c50974fe0a3631ec9a8d2fac95d7c50d"
+  integrity sha512-AkD7RiL60Cjsp6qVyjEM+X3nGsk1eO4SsNB7yVBADlBR6IogJno7wzZ4vGHbDTGuxge2LV1FR7peBuT95cHifw==
+
 "@fontsource/montserrat@^4.0.1":
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/@fontsource/montserrat/-/montserrat-4.1.0.tgz#a5f4d334b3702699af88c5e6c5c6972095c2c947"
