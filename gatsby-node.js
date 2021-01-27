@@ -1,6 +1,9 @@
 const path = require('path')
 const axios = require('axios')
-const { createFilePath, createRemoteFileNode } = require('gatsby-source-filesystem')
+const {
+  createFilePath,
+  createRemoteFileNode
+} = require('gatsby-source-filesystem')
 
 exports.createSchemaCustomization = ({ actions: { createTypes } }) =>
   createTypes(`
@@ -63,7 +66,14 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   //   })
   // })
 }
-exports.onCreateNode = async ({ node, actions, getNode, createNodeId, cache, store }) => {
+exports.onCreateNode = async ({
+  node,
+  actions,
+  getNode,
+  createNodeId,
+  cache,
+  store
+}) => {
   const { createNodeField, createNode } = actions
 
   if (node.internal.type === 'MarkdownRemark') {
@@ -83,7 +93,6 @@ exports.onCreateNode = async ({ node, actions, getNode, createNodeId, cache, sto
     })
   }
 
-
   if (node.internal.type === 'Ad' && node.imageUrl) {
     const fileNode = await createRemoteFileNode({
       url: node.imageUrl, // string that points to the URL of the image
@@ -91,7 +100,7 @@ exports.onCreateNode = async ({ node, actions, getNode, createNodeId, cache, sto
       createNode, // helper function in gatsby-node to generate the node
       createNodeId, // helper function in gatsby-node to generate the node id
       cache, // Gatsby's cache
-      store, // Gatsby's Redux store
+      store // Gatsby's Redux store
     })
 
     if (fileNode) {
@@ -100,8 +109,14 @@ exports.onCreateNode = async ({ node, actions, getNode, createNodeId, cache, sto
   }
 }
 
-exports.sourceNodes = async ({ actions, createNodeId, createContentDigest }) => {
-  const { data } = await axios.get('https://raw.githubusercontent.com/nathanchu/advertise/main/ads.json')
+exports.sourceNodes = async ({
+  actions,
+  createNodeId,
+  createContentDigest
+}) => {
+  const { data } = await axios.get(
+    'https://raw.githubusercontent.com/nathanchu/advertise/main/ads.json'
+  )
 
   data.forEach((ad, index) => {
     actions.createNode({

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import codebackground from '../images/codebackground.svg'
 import Highlight from './highlight'
 import ReactMarkdown from 'react-markdown'
@@ -6,29 +6,35 @@ import { aProps } from '../utilities'
 import { graphql, useStaticQuery } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
 const query = graphql`
-query MainAds {
-  allAd {
-    edges {
-      node {
-        body
-        image {
-          childImageSharp {
-            gatsbyImageData(formats: [AUTO, WEBP, AVIF], layout: FIXED, height: 96, width: 112, transformOptions: {fit: INSIDE})
+  query MainAds {
+    allAd {
+      edges {
+        node {
+          body
+          image {
+            childImageSharp {
+              gatsbyImageData(
+                formats: [AUTO, WEBP, AVIF]
+                layout: FIXED
+                height: 96
+                width: 112
+                transformOptions: { fit: INSIDE }
+              )
+            }
           }
+          title
+          url
         }
-        title
-        url
       }
     }
   }
-}
 `
 const Main = () => {
   const data = useStaticQuery(query)
   const allAd = data.allAd.edges
   const randAd = () => allAd[Math.floor(Math.random() * allAd.length)].node
-  const [ad, setAd] = useState(null)
-  useEffect(() => {
+  const [ad, setAd] = React.useState(null)
+  React.useEffect(() => {
     setAd(randAd())
   }, [])
   return (
@@ -49,21 +55,27 @@ const Main = () => {
         </h2>
         <br />
         <br />
-        <a href={ad?.url || "#"}>
+        <a href={ad?.url || '#'}>
           <div className="flex flex-col mx-auto font-sans bg-gray-100 dark:bg-black-light rounded-md w-80 h-36 py-2 px-4">
-            <h3 className="text-xl font-bold w-72">{ad?.title || ""}</h3>
+            <h3 className="text-xl font-bold w-72">{ad?.title || ''}</h3>
             <div className="flex flex-1 items-center justify-center content-center align-center">
-              {
-                ad?.image?.childImageSharp?.gatsbyImageData
-                  ? <GatsbyImage className="float-left object-contain" style={{maxWidth: '7rem'}} image={ad.image.childImageSharp.gatsbyImageData} />
-                  : null
-              }
+              {ad?.image?.childImageSharp?.gatsbyImageData
+                ? (
+                <GatsbyImage
+                  className="float-left object-contain"
+                  style={{ maxWidth: '7rem' }}
+                  image={ad.image.childImageSharp.gatsbyImageData}
+                />
+                  )
+                : null}
               <div className="text-left px-4 text-xs">
-                {
-                  ad?.body
-                    ? <ReactMarkdown className="overflow-elipses break-words overflow-hidden max-h-24">{ad.body}</ReactMarkdown>
-                    : null
-                }
+                {ad?.body
+                  ? (
+                  <ReactMarkdown className="overflow-elipses break-words overflow-hidden max-h-24">
+                    {ad.body}
+                  </ReactMarkdown>
+                    )
+                  : null}
               </div>
             </div>
           </div>
