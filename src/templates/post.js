@@ -3,7 +3,6 @@ import React from 'react'
 import Layout from '../components/layout'
 import './post.css'
 import '../css/nord.css'
-import { CommentCount, DiscussionEmbed } from 'disqus-react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 export default ({ data }) => {

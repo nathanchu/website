@@ -13,7 +13,7 @@ const theme = {
   faded: '#888'
 }
 
-export default function Search ({ indices }) {
+export default function Search({ indices }) {
   const rootRef = React.createRef()
   const [query, setQuery] = React.useState()
   const [hasFocus, setFocus] = React.useState(false)

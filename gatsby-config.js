@@ -78,7 +78,8 @@ module.exports = {
         gatsbyRemarkPlugins: [
           'gatsby-remark-embedder',
           'gatsby-remark-autolink-headers',
-          'gatsby-remark-prismjs'
+          'gatsby-remark-prismjs',
+          'gatsby-remark-images'
         ]
       }
     }
