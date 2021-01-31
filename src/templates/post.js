@@ -3,19 +3,8 @@ import React from 'react'
 import Layout from '../components/layout'
 import './post.css'
 import '../css/nord.css'
-import { CommentCount, DiscussionEmbed } from 'disqus-react'
 
 export default ({ data }) => {
-  const disqusConfig = {
-    shortname: 'nathanchu',
-    config: {
-      title: data.markdownRemark.frontmatter.title,
-      url: data.site.siteMetadata.siteUrl + data.markdownRemark.fields.slug,
-      identifier: data.markdownRemark.fields.slug,
-      language: 'us_EN'
-    }
-  }
-
   return (
     <Layout article title={data.markdownRemark.frontmatter.title}>
       <div>
@@ -33,10 +22,7 @@ export default ({ data }) => {
               {data.markdownRemark.frontmatter.tags
                 .map(e => e.charAt(0).toUpperCase() + e.substr(1))
                 .join(', ')}{' '}
-              ] |{' '}
-              <a href="#disqus_thread">
-                <CommentCount {...disqusConfig}>Comments</CommentCount>
-              </a>
+              ]
             </span>
           </div>
           <div className="flex justify-center">
@@ -45,12 +31,6 @@ export default ({ data }) => {
                 className="markdown-body"
                 dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
               />
-              <br />
-              <br />
-              <hr />
-              <br />
-              <br />
-              <DiscussionEmbed {...disqusConfig} />
             </div>
             <div
               className="hidden table-of-contents ml-16 my-8 lg:block"

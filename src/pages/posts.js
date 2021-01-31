@@ -1,7 +1,6 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/layout'
-import { CommentCount } from 'disqus-react'
 
 export default ({ data }) => {
   return (
@@ -21,18 +20,7 @@ export default ({ data }) => {
                 {node.frontmatter.tags
                   .map(e => `'${e.replace("'", "\\'")}'`)
                   .join(', ')}{' '}
-                ] |{' '}
-                <CommentCount
-                  shortname="nathanchu"
-                  config={{
-                    title: node.frontmatter.title,
-                    url: data.site.siteMetadata.siteUrl + node.fields.slug,
-                    identifier: node.fields.slug,
-                    language: 'us_EN'
-                  }}
-                >
-                  Comments
-                </CommentCount>
+                ]
               </span>
               <br />
               <br />

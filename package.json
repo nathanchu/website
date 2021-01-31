@@ -24,7 +24,6 @@
     "algoliasearch": "^4.8.3",
     "autoprefixer": "^10.1.0",
     "axios": "^0.21.1",
-    "disqus-react": "^1.0.10",
     "dotenv": "^8.2.0",
     "gatsby": "^2.26.1",
     "gatsby-plugin-algolia": "^0.16.2",
