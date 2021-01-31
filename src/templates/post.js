@@ -6,13 +6,13 @@ import '../css/nord.css'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 export default ({ data }) => {
-  const itemsUl = arr => (
+  const ItemsUl = ({ items }) => (
     <ul>
-      {arr.map((e, i) => (
+      {items.map((e, i) => (
         <li key={i}>
           <a href={e.url}>
             {e.title}
-            {e.items ? itemsUl(e.items) : null}
+            {e.items ? <ItemsUl items={e.items} /> : null}
           </a>
         </li>
       ))}
@@ -48,7 +48,7 @@ export default ({ data }) => {
               className="hidden table-of-contents ml-16 my-8 lg:block"
               style={{ flexBasis: '12rem' }}
             >
-              {itemsUl(data.mdx.tableOfContents.items)}
+              <ItemsUl items={data.mdx.tableOfContents.items} />
             </div>
           </div>
         </div>
