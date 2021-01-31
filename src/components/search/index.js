@@ -1,5 +1,5 @@
 import algoliasearch from 'algoliasearch/lite'
-import React, { createRef, useState } from 'react'
+import React from 'react'
 import { InstantSearch } from 'react-instantsearch-dom'
 import { ThemeProvider } from 'styled-components'
 import StyledSearchBox from './styled-search-box'
@@ -14,9 +14,9 @@ const theme = {
 }
 
 export default function Search ({ indices }) {
-  const rootRef = createRef()
-  const [query, setQuery] = useState()
-  const [hasFocus, setFocus] = useState(false)
+  const rootRef = React.createRef()
+  const [query, setQuery] = React.useState()
+  const [hasFocus, setFocus] = React.useState(false)
   const searchClient = algoliasearch(
     process.env.GATSBY_ALGOLIA_APP_ID,
     process.env.GATSBY_ALGOLIA_SEARCH_KEY

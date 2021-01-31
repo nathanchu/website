@@ -76,7 +76,7 @@ const Projects = () => {
   return (
     <div className="mt-12 flex items-center flex-col">
       <span className="href-anchor" id="projects" aria-hidden />
-      <h1 className="font-bold text-6xl mt-12 mb-6">Projects</h1>
+      <h1 className="font-bold text-6xl mt-12 mb-6 font-title">Projects</h1>
       {projects.map(({ title, repo, website, description, image }, i) => (
         <div className="flex items-center" key={i}>
           <Project

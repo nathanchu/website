@@ -17,6 +17,7 @@
   },
   "license": "MIT",
   "dependencies": {
+    "@fontsource/lato": "^4.1.0",
     "@fontsource/montserrat": "^4.0.1",
     "@fontsource/source-code-pro": "^4.0.1",
     "@mdx-js/mdx": "^1.6.22",
@@ -24,7 +25,7 @@
     "@styled-icons/fa-solid": "^10.23.0",
     "algoliasearch": "^4.8.3",
     "autoprefixer": "^10.1.0",
-    "disqus-react": "^1.0.10",
+    "axios": "^0.21.1",
     "dotenv": "^8.2.0",
     "gatsby": "^2.26.1",
     "gatsby-plugin-algolia": "^0.16.2",
@@ -50,6 +51,7 @@
     "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0",
     "react-instantsearch-dom": "^6.8.2",
+    "react-markdown": "^5.0.3",
     "styled-components": "^5.2.1",
     "tailwindcss": "^2.0.2"
   },

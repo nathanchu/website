@@ -43,7 +43,7 @@ const Nav = () => {
   } = useStaticQuery(query)
   return (
     <div className="flex justify-between items-center px-6 z-50 fixed inset-0 h-20 shadow-xl bg-gray-50 dark:bg-black-light dark:text-gray-50">
-      <span className="text-3xl font-bold">Nathan Chu</span>
+      <span className="text-3xl font-bold font-title">Nathan Chu</span>
       <nav>
         <ul className="flex items-center">
           {nav.map(({ name, link }, index) => (

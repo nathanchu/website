@@ -7,16 +7,6 @@ import { CommentCount, DiscussionEmbed } from 'disqus-react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 export default ({ data }) => {
-  const disqusConfig = {
-    shortname: 'nathanchu',
-    config: {
-      title: data.mdx.frontmatter.title,
-      url: data.site.siteMetadata.siteUrl + data.mdx.fields.slug,
-      identifier: data.mdx.fields.slug,
-      language: 'us_EN'
-    }
-  }
-
   const itemsUl = arr => (
     <ul>
       {arr.map((e, i) => (
@@ -35,7 +25,9 @@ export default ({ data }) => {
       <div>
         <div className="mt-32 md:px-24 mx-auto">
           <div className="mx-auto max-w-3xl bg-gray-50 shadow-card dark:bg-black-light dark:text-gray-50 rounded-lg p-12 text-center mb-12">
-            <h1 className="text-6xl font-bold">{data.mdx.frontmatter.title}</h1>
+            <h1 className="text-6xl font-bold font-title">
+              {data.mdx.frontmatter.title}
+            </h1>
             <br />
             <span className="text-sm text-gray-600 dark:text-gray-400">
               {' '}
@@ -44,10 +36,7 @@ export default ({ data }) => {
               {data.mdx.frontmatter.tags
                 .map(e => e.charAt(0).toUpperCase() + e.substr(1))
                 .join(', ')}{' '}
-              ] |{' '}
-              <a href="#disqus_thread">
-                <CommentCount {...disqusConfig}>Comments</CommentCount>
-              </a>
+              ]
             </span>
           </div>
           <div className="flex justify-center">
@@ -55,12 +44,6 @@ export default ({ data }) => {
               <div className="markdown-body">
                 <MDXRenderer>{data.mdx.body}</MDXRenderer>
               </div>
-              <br />
-              <br />
-              <hr />
-              <br />
-              <br />
-              <DiscussionEmbed {...disqusConfig} />
             </div>
             <div
               className="hidden table-of-contents ml-16 my-8 lg:block"

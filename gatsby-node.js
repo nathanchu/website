@@ -1,5 +1,9 @@
 const path = require('path')
-const { createFilePath } = require('gatsby-source-filesystem')
+const axios = require('axios')
+const {
+  createFilePath,
+  createRemoteFileNode
+} = require('gatsby-source-filesystem')
 
 exports.createSchemaCustomization = ({ actions: { createTypes } }) =>
   createTypes(`
@@ -33,7 +37,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   if (query.errors) {
     reporter.panicOnBuild(
-      'createPages > GraphQL Error' + query.errors ? '\n\n' + query.errors : ''
+      `createPages > GraphQL Error${query.errors ? '\n\n' + query.errors : ''}`
     )
     return
   }
@@ -59,8 +63,15 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   //   })
   // })
 }
-exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions
+exports.onCreateNode = async ({
+  node,
+  actions,
+  getNode,
+  createNodeId,
+  cache,
+  store
+}) => {
+  const { createNodeField, createNode } = actions
 
   if (node.internal.type === 'Mdx') {
     const value = path.posix.join(
@@ -78,4 +89,44 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       value
     })
   }
+
+  if (node.internal.type === 'Ad' && node.imageUrl) {
+    const fileNode = await createRemoteFileNode({
+      url: node.imageUrl, // string that points to the URL of the image
+      parentNodeId: node.id, // id of the parent node of the fileNode you are going to create
+      createNode, // helper function in gatsby-node to generate the node
+      createNodeId, // helper function in gatsby-node to generate the node id
+      cache, // Gatsby's cache
+      store // Gatsby's Redux store
+    })
+
+    if (fileNode) {
+      node.image___NODE = fileNode.id
+    }
+  }
+}
+
+exports.sourceNodes = async ({
+  actions,
+  createNodeId,
+  createContentDigest
+}) => {
+  const { data } = await axios.get(
+    'https://raw.githubusercontent.com/nathanchu/advertise/main/ads.json'
+  )
+
+  data.forEach((ad, index) => {
+    actions.createNode({
+      ...ad,
+      id: createNodeId(`nathanchu-com-ads-${index}`),
+      parent: null,
+      children: [],
+      internal: {
+        type: 'Ad',
+        mediaType: 'nathanchu-com-ads',
+        content: JSON.stringify(data),
+        contentDigest: createContentDigest(data)
+      }
+    })
+  })
 }
