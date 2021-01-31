@@ -6,7 +6,7 @@ export default ({ data }) => {
   return (
     <Layout>
       <div className="mt-24">
-        {data.allMarkdownRemark.edges.map(({ node }, i) => (
+        {data.allMdx.edges.map(({ node }, i) => (
           <Link key={i} to={node.fields.slug}>
             <div className="mx-auto max-w-4xl bg-gray-50 shadow-card dark:bg-black-light dark:text-gray-50 rounded-lg p-12 my-16">
               <h1 className="text-4xl font-bold font-title">
@@ -41,7 +41,7 @@ export const query = graphql`
         siteUrl
       }
     }
-    allMarkdownRemark(sort: { fields: frontmatter___date, order: DESC }) {
+    allMdx(sort: { fields: frontmatter___date, order: DESC }) {
       edges {
         node {
           frontmatter {

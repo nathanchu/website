@@ -53,15 +53,13 @@ const Nav = () => {
                 link && link.includes('#') ? 'hidden sm:block' : ''
               } ${!link ? 'hidden sm:block mx-1' : 'mx-6'}`}
             >
-              {link
-                ? (
+              {link ? (
                 <Link className="no-underline" to={link}>
                   {name}
                 </Link>
-                  )
-                : (
-                    name
-                  )}
+              ) : (
+                name
+              )}
             </li>
           ))}
           {sha && repo && (

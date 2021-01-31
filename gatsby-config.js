@@ -63,16 +63,6 @@ module.exports = {
       }
     },
     {
-      resolve: 'gatsby-transformer-remark',
-      options: {
-        plugins: [
-          'gatsby-remark-embedder',
-          'gatsby-remark-autolink-headers',
-          'gatsby-remark-prismjs'
-        ]
-      }
-    },
-    {
       resolve: 'gatsby-plugin-algolia',
       options: {
         appId: process.env.GATSBY_ALGOLIA_APP_ID,
@@ -80,6 +70,18 @@ module.exports = {
         queries: require('./src/utils/algolia-queries')
       }
     },
-    'gatsby-plugin-styled-components'
+    'gatsby-plugin-styled-components',
+    {
+      resolve: 'gatsby-plugin-mdx',
+      options: {
+        extensions: ['.mdx', '.md'],
+        gatsbyRemarkPlugins: [
+          'gatsby-remark-embedder',
+          'gatsby-remark-autolink-headers',
+          'gatsby-remark-prismjs',
+          'gatsby-remark-images'
+        ]
+      }
+    }
   ]
 }

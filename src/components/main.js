@@ -59,23 +59,19 @@ const Main = () => {
           <div className="flex flex-col mx-auto font-sans bg-gray-100 dark:bg-black-light rounded-md w-80 h-36 py-2 px-4">
             <h3 className="text-xl font-bold w-72">{ad?.title || ''}</h3>
             <div className="flex flex-1 items-center justify-center content-center align-center">
-              {ad?.image?.childImageSharp?.gatsbyImageData
-                ? (
+              {ad?.image?.childImageSharp?.gatsbyImageData ? (
                 <GatsbyImage
                   className="float-left object-contain"
                   style={{ maxWidth: '7rem' }}
                   image={ad.image.childImageSharp.gatsbyImageData}
                 />
-                  )
-                : null}
+              ) : null}
               <div className="text-left px-4 text-xs">
-                {ad?.body
-                  ? (
+                {ad?.body ? (
                   <ReactMarkdown className="overflow-elipses break-words overflow-hidden max-h-24">
                     {ad.body}
                   </ReactMarkdown>
-                    )
-                  : null}
+                ) : null}
               </div>
             </div>
           </div>
