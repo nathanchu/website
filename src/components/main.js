@@ -61,8 +61,7 @@ const Main = () => {
             <div className="flex flex-1 items-center justify-center content-center align-center">
               {ad?.image?.childImageSharp?.gatsbyImageData ? (
                 <GatsbyImage
-                  className="float-left object-contain"
-                  style={{ maxWidth: '7rem' }}
+                  className="float-left object-contain flex-none"
                   image={ad.image.childImageSharp.gatsbyImageData}
                 />
               ) : null}
