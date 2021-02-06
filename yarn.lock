@@ -1123,20 +1123,20 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@fontsource/lato@^4.1.0":
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/@fontsource/lato/-/lato-4.1.0.tgz#a510e063c50974fe0a3631ec9a8d2fac95d7c50d"
-  integrity sha512-AkD7RiL60Cjsp6qVyjEM+X3nGsk1eO4SsNB7yVBADlBR6IogJno7wzZ4vGHbDTGuxge2LV1FR7peBuT95cHifw==
+"@fontsource/lato@^4.2.0":
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/@fontsource/lato/-/lato-4.2.0.tgz#74abc326d146d97591fae7dfe8b57a8c02723125"
+  integrity sha512-A2i1yAnqBEpfHro+0RYG/gYnds+H8LinkxebUdv86GCkDom/i6nnOlgzXuvzBjaM4FgTPvEZRDmz0S5lnO6KQQ==
 
-"@fontsource/montserrat@^4.1.0":
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/@fontsource/montserrat/-/montserrat-4.1.0.tgz#a5f4d334b3702699af88c5e6c5c6972095c2c947"
-  integrity sha512-Dqd+sGHfKg3TGlNs7f8VFQLjSgLcu6ZzlDS10rVDIs/YZVCWt9BMgdLF3n19QQt8HsuUteK+YOhswGL23W3Lgw==
+"@fontsource/montserrat@^4.2.0":
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/@fontsource/montserrat/-/montserrat-4.2.0.tgz#ec904735c78dc3ea0b02d38496ab10b8bc348fb1"
+  integrity sha512-lNSTo0rJs5dLRS4mcxbqjefgdhAe+cxgX3MwTQI3XLdAEQqvisM90v/a63jz5IoZNLqPhdD6NtERKSLtYSuK4g==
 
-"@fontsource/source-code-pro@^4.1.0":
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/@fontsource/source-code-pro/-/source-code-pro-4.1.0.tgz#866d5184347f8784e6ebc6bda44871f39b34a426"
-  integrity sha512-nT72GgTuzwGfZsmkEDi94fPcBh0DzATtyRg8KPfvx4icESNvopcmidMsQVfFbTihjM4Ll4YGlT6WRL5uiuwWbA==
+"@fontsource/source-code-pro@^4.2.0":
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/@fontsource/source-code-pro/-/source-code-pro-4.2.0.tgz#0140557ad8bff7a6f39bc5895bcf152b7ad32dee"
+  integrity sha512-BcyvESiTW6I/EoDtsbsXPmAg73KM0jQu26UolujIo7ZSi1C8PxSQwW7aWOolyfWuXNcvH0BANqThyBMxEX0ctg==
 
 "@fullhuman/postcss-purgecss@^3.0.0":
   version "3.1.3"
@@ -11930,10 +11930,19 @@ postcss@^7.0.0, postcss@^7.0.1, postcss@^7.0.26, postcss@^7.0.27, postcss@^7.0.3
     source-map "^0.6.1"
     supports-color "^6.1.0"
 
-postcss@^8.1.6, postcss@^8.2.1, postcss@^8.2.4:
+postcss@^8.1.6, postcss@^8.2.1:
   version "8.2.4"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.2.4.tgz#20a98a39cf303d15129c2865a9ec37eda0031d04"
   integrity sha512-kRFftRoExRVXZlwUuay9iC824qmXPcQQVzAjbCCgjpXnkdMCJYBu2gTwAaFBzv8ewND6O8xFb3aELmEkh9zTzg==
+  dependencies:
+    colorette "^1.2.1"
+    nanoid "^3.1.20"
+    source-map "^0.6.1"
+
+postcss@^8.2.5:
+  version "8.2.5"
+  resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.2.5.tgz#3c75149ada4e93db9521913654c0144517f77c9a"
+  integrity sha512-wMcb7BpDcm3gxQOQx46NDNT36Kk0Ao6PJLLI2ed5vehbbbxCEuslSQzbQ2sfSKy+gkYxhWcGWSeaK+gwm4KIZg==
   dependencies:
     colorette "^1.2.1"
     nanoid "^3.1.20"
