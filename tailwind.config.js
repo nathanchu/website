@@ -72,7 +72,11 @@ module.exports = {
       maxHeight: height,
       spacing: spacing,
       zIndex: {
-        '-10': '-10'
+        '-10': '-10',
+        '-20': '-20',
+        '-30': '-30',
+        '-40': '-40',
+        '-50': '-50'
       },
       minWidth: {
         ...width,
