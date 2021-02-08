@@ -1,5 +1,5 @@
 import React from 'react'
-import Highlight, { defaultProps } from 'prism-react-renderer'
+import PrismHighlight, { defaultProps } from 'prism-react-renderer'
 const nordTheme = {
   plain: {
     color: '#d8dee9',
@@ -69,9 +69,14 @@ const nordTheme = {
   ]
 }
 
-export default ({ code, className }) => {
+const Highlight = ({ code, className }) => {
   return (
-    <Highlight {...defaultProps} theme={nordTheme} code={code} language="json">
+    <PrismHighlight
+      {...defaultProps}
+      theme={nordTheme}
+      code={code}
+      language="json"
+    >
       {({ defaultClassName, style, tokens, getLineProps, getTokenProps }) => (
         <pre className={`${className} ${defaultClassName}`} style={style}>
           {tokens.map((line, i) => (
@@ -83,6 +88,8 @@ export default ({ code, className }) => {
           ))}
         </pre>
       )}
-    </Highlight>
+    </PrismHighlight>
   )
 }
+
+export default Highlight

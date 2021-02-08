@@ -1,7 +1,7 @@
 import React from 'react'
 import Layout from '../components/layout'
 
-export default () => {
+const _404 = () => {
   return (
     <Layout className="flex content-center items-center w-screen h-screen">
       <div className="mx-auto text-center">
@@ -11,3 +11,5 @@ export default () => {
     </Layout>
   )
 }
+
+export default _404

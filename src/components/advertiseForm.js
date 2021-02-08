@@ -28,7 +28,7 @@ const Form = styled.form`
   }
 `
 
-export default () => {
+const AdvertiseForm = () => {
   return (
     <Wrapper>
       <Form action="https://formspree.io/f/xgepdkvd" method="POST">
@@ -67,3 +67,5 @@ export default () => {
     </Wrapper>
   )
 }
+
+export default AdvertiseForm

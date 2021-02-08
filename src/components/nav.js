@@ -36,11 +36,9 @@ const query = graphql`
 `
 
 const Nav = () => {
-  const {
-    site: {
-      siteMetadata: { sha, repo }
-    }
-  } = useStaticQuery(query)
+  const { site } = useStaticQuery(query)
+  const { siteMetadata } = site
+  const { sha, repo } = siteMetadata
   return (
     <div className="flex justify-between items-center px-6 z-10 fixed inset-0 h-20 shadow-xl bg-gray-50 dark:bg-black-light dark:text-gray-50">
       <span className="text-3xl font-bold font-title">Nathan Chu</span>

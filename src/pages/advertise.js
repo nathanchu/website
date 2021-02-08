@@ -1,6 +1,6 @@
 import React from 'react'
 import AdvertiseForm from '../components/advertiseForm'
-export default () => {
+const Advertise = () => {
   return (
     <div className="flex flex-col justify-center items-center">
       <div className="flex flex-col justify-center items-center">
@@ -28,3 +28,5 @@ export default () => {
     </div>
   )
 }
+
+export default Advertise

@@ -23,6 +23,22 @@ const createSearch = data => {
   return search
 }
 
+const useClickOutside = (ref, onClickOutside) => {
+  const onClick = event => {
+    if (!ref?.current?.contains(event.target)) onClickOutside()
+  }
+github
+  React.useEffect(() => {
+    document.addEventListener('mousedown', onClick)
+    document.addEventListener('touchstart', onClick)
+
+    return () => {
+      document.removeEventListener('mousedown', onClick)
+      document.removeEventListener('touchstart', onClick)
+    }
+  }, [ref, onClickOutside])
+}
+
 const SearchIconSvg = styled.svg`
   width: 18px;
   height: 18px;
@@ -80,9 +96,11 @@ const SearchInputContainer = styled.div`
   align-items: center;
 `
 
-export default () => {
+const Search = () => {
+  const ref = React.createRef()
   const [searchTerm, setSearchTerm] = React.useState('')
   const [inputFocused, setInputFocused] = React.useState(false)
+  useClickOutside(ref, () => setInputFocused(false))
   const focused = searchTerm && searchTerm.length > 0 && inputFocused
   const data = useStaticQuery(query)
   const transform = data =>
@@ -93,14 +111,14 @@ export default () => {
   const searchData = transform(data)
   const search = createSearch(searchData)
   return (
-    <SearchBox>
+    <SearchBox ref={ref}>
       <SearchInputContainer>
         <SearchIcon />
         <input
           className="bg-gray-100 p-2 pl-8 w-40"
-          onChange={e => setSearchTerm(e?.target?.value)}
+          onChange={e => setSearchTerm(e?.target?.value || '')}
           onFocus={() => setInputFocused(true)}
-          onBlur={() => setInputFocused(false)}
+          onClick={() => setInputFocused(true)}
           value={searchTerm}
           aria-label="Search"
         />
@@ -123,3 +141,5 @@ export default () => {
     </SearchBox>
   )
 }
+
+export default Search

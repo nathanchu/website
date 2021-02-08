@@ -5,20 +5,20 @@ import './post.css'
 import '../css/nord.css'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
-export default ({ data }) => {
-  const ItemsUl = ({ items }) => (
-    <ul>
-      {items.map((e, i) => (
-        <li key={i}>
-          <a href={e.url}>
-            {e.title}
-            {e.items ? <ItemsUl items={e.items} /> : null}
-          </a>
-        </li>
-      ))}
-    </ul>
-  )
+const ItemsUl = ({ items }) => (
+  <ul>
+    {items.map((e, i) => (
+      <li key={i}>
+        <a href={e.url}>
+          {e.title}
+          {e.items ? <ItemsUl items={e.items} /> : null}
+        </a>
+      </li>
+    ))}
+  </ul>
+)
 
+const Post = ({ data }) => {
   return (
     <Layout article title={data.mdx.frontmatter.title}>
       <div>
@@ -79,3 +79,5 @@ export const query = graphql`
     }
   }
 `
+
+export default Post

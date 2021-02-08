@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-export default function HTML(props) {
+const HTML = props => {
   return (
     <html {...props.htmlAttributes} lang="en">
       <head>
@@ -44,3 +44,5 @@ HTML.propTypes = {
   body: PropTypes.string,
   postBodyComponents: PropTypes.array
 }
+
+export default HTML

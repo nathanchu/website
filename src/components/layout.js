@@ -2,7 +2,7 @@ import React from 'react'
 import Nav from './nav'
 import SEO from './seo'
 
-export default ({ title, description, image, article, children, ...rest }) => {
+const Layout = ({ title, description, image, article, children, ...rest }) => {
   return (
     <div {...rest}>
       <SEO
@@ -16,3 +16,5 @@ export default ({ title, description, image, article, children, ...rest }) => {
     </div>
   )
 }
+
+export default Layout

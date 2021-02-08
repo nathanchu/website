@@ -1,7 +1,6 @@
 import React from 'react'
 import codebackground from '../images/codebackground.svg'
 import Highlight from './highlight'
-import ReactMarkdown from 'react-markdown'
 import { aProps } from '../utilities'
 import { graphql, useStaticQuery } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
@@ -47,7 +46,7 @@ const Main = () => {
         <br />
         <hr />
         <br />
-        <h2 className="text-4xl font-light font-title">
+        <h2 className="text-4xl font-light">
           A web developer |{' '}
           <a {...aProps} href="https://github.com/nathanchu">
             GitHub
@@ -63,15 +62,10 @@ const Main = () => {
                 <GatsbyImage
                   className="float-left object-contain flex-none"
                   image={ad.image.childImageSharp.gatsbyImageData}
+                  alt={ad?.title || ''}
                 />
               ) : null}
-              <div className="text-left px-4 text-xs">
-                {ad?.body ? (
-                  <ReactMarkdown className="overflow-elipses break-words overflow-hidden max-h-24">
-                    {ad.body}
-                  </ReactMarkdown>
-                ) : null}
-              </div>
+              <div className="text-left px-4 text-xs">{ad?.body || null}</div>
             </div>
           </div>
         </a>

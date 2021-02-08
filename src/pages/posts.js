@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/layout'
 
-export default ({ data }) => {
+const Posts = ({ data }) => {
   return (
     <Layout>
       <div className="mt-24">
@@ -59,3 +59,5 @@ export const query = graphql`
     }
   }
 `
+
+export default Posts
