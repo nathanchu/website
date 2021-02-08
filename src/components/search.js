@@ -27,7 +27,7 @@ const useClickOutside = (ref, onClickOutside) => {
   const onClick = event => {
     if (!ref?.current?.contains(event.target)) onClickOutside()
   }
-github
+
   React.useEffect(() => {
     document.addEventListener('mousedown', onClick)
     document.addEventListener('touchstart', onClick)

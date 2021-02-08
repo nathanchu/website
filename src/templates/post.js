@@ -11,8 +11,8 @@ const ItemsUl = ({ items }) => (
       <li key={i}>
         <a href={e.url}>
           {e.title}
-          {e.items ? <ItemsUl items={e.items} /> : null}
         </a>
+        {e.items ? <ItemsUl items={e.items} /> : null}
       </li>
     ))}
   </ul>
