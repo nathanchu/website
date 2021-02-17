@@ -6,7 +6,12 @@ import Layout from '../components/layout'
 
 const Home = () => {
   return (
-    <Layout title="Home" className="my-24">
+    <Layout
+      title="Home"
+      css={`
+        margin: 96px 0;
+      `}
+    >
       <Main />
       <About />
       <Projects />

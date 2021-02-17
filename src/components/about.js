@@ -1,12 +1,34 @@
 import React from 'react'
+import { Title } from './text'
+import Anchor from './anchor'
 import { aProps } from '../utilities'
 
 const About = () => (
-  <div className="mt-12 text-center mx-screen-x-1/6">
-    <span className="href-anchor" id="about" />
-    <h1 className="mt-12 mb-6 font-bold text-6xl font-title">About Me</h1>
+  <div
+    css={`
+      margin-top: 48px;
+      text-align: center;
+      margin-left: 16.666667vw;
+      margin-right: 16.666667vw;
+    `}
+  >
+    <Anchor id="about" />
+    <Title
+      as="h1"
+      css={`
+        margin-top: 48px;
+        margin-bottom: 24px;
+      `}
+    >
+      About Me
+    </Title>
     <br />
-    <p className="text-2xl">
+    <p
+      css={`
+        font-size: 1.5rem;
+        line-height: 2rem;
+      `}
+    >
       Hello, World! I&apos;m Nathan Chu{' '}
       <a {...aProps} href="https://github.com/nathanchu">
         (@nathanchu on GitHub)

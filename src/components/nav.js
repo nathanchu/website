@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link, graphql, useStaticQuery } from 'gatsby'
+import styled, { css } from 'styled-components'
 import Search from './search'
+import { Title } from './text'
 
 const nav = [
   {
@@ -35,48 +37,109 @@ const query = graphql`
   }
 `
 
+const ExtraItem = styled.li`
+  display: none;
+  @media (min-width: 640px) {
+    display: block;
+  }
+  margin: ${({ divider }) => (divider ? '0 4px' : '0 24px')};
+`
+
+const NavWrapper = styled.nav`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  height: 80px;
+  padding: 0 24px;
+  z-index: 10;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  background-color: rgb(249, 250, 251);
+  @media (prefers-color-scheme: dark) {
+    background-color: rgb(48, 48, 48);
+    color: rgb(249, 250, 251);
+  }
+`
+
+const NavItem = styled.li`
+  ${({ extra }) =>
+    extra &&
+    css`
+      display: none;
+      @media (min-width: 768px) {
+        display: block;
+      }
+    `}
+  ${({ divider }) =>
+    divider
+      ? css`
+          margin: 0 4px;
+        `
+      : css`
+          margin: 0 24px;
+        `}
+`
+
 const Nav = () => {
   const { site } = useStaticQuery(query)
   const { siteMetadata } = site
   const { sha, repo } = siteMetadata
   return (
-    <div className="flex justify-between items-center px-6 z-10 fixed inset-0 h-20 shadow-xl bg-gray-50 dark:bg-black-light dark:text-gray-50">
-      <span className="text-3xl font-bold font-title">Nathan Chu</span>
-      <nav>
-        <ul className="flex items-center">
-          {nav.map(({ name, link }, index) => (
-            <li
-              key={index}
-              className={`${
-                link && link.includes('#') ? 'hidden md:block' : ''
-              } ${!link ? 'hidden md:block mx-1' : 'mx-6'}`}
-            >
-              {link ? (
-                <Link className="no-underline" to={link}>
-                  {name}
-                </Link>
-              ) : (
-                name
-              )}
-            </li>
-          ))}
-          {sha && repo && (
-            <>
-              <li className="hidden sm:block mx-1">|</li>
-              <li className="hidden sm:block mx-6">
-                <a href={`https://github.com/${repo}/commit/${sha}`}>
-                  {sha.substring(0, 7)}
-                </a>
-              </li>
-            </>
-          )}
-          <li className="hidden sm:block mx-1">|</li>
-          <li className="hidden sm:block mx-6">
-            <Search />
-          </li>
-        </ul>
-      </nav>
-    </div>
+    <NavWrapper>
+      <Title
+        css={`
+          font-size: 1.875rem;
+          line-height: 2.25rem;
+        `}
+      >
+        Nathan Chu
+      </Title>
+      <ul
+        css={`
+          display: flex;
+          align-items: center;
+        `}
+      >
+        {nav.map(({ name, link }, index) => (
+          <NavItem
+            key={index}
+            extra={link && link.includes('#')}
+            divider={!link}
+          >
+            {link ? (
+              <Link
+                css={`
+                  text-decoration: none;
+                `}
+                to={link}
+              >
+                {name}
+              </Link>
+            ) : (
+              name
+            )}
+          </NavItem>
+        ))}
+        {sha && repo && (
+          <>
+            <ExtraItem divider>|</ExtraItem>
+            <ExtraItem>
+              <a href={`https://github.com/${repo}/commit/${sha}`}>
+                {sha.substring(0, 7)}
+              </a>
+            </ExtraItem>
+          </>
+        )}
+        <ExtraItem divider>|</ExtraItem>
+        <ExtraItem>
+          <Search />
+        </ExtraItem>
+      </ul>
+    </NavWrapper>
   )
 }
 

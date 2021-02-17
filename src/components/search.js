@@ -89,6 +89,16 @@ const SearchBox = styled.div`
 
 const SearchResults = styled.div`
   display: ${({ focused }) => (focused ? 'block' : 'none')};
+  position: absolute;
+  right: 0;
+  width: 384px;
+  z-index: 20;
+  background-color: rgb(249, 250, 251);
+  padding: 8px 24px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  max-height: 384px;
+  overflow: scroll;
 `
 
 const SearchInputContainer = styled.div`
@@ -115,7 +125,12 @@ const Search = () => {
       <SearchInputContainer>
         <SearchIcon />
         <input
-          className="bg-gray-100 p-2 pl-8 w-40"
+          css={`
+            background-color: rgb(243, 244, 246);
+            padding: 8px;
+            padding-left: 32px;
+            width: 160px;
+          `}
           onChange={e => setSearchTerm(e?.target?.value || '')}
           onFocus={() => setInputFocused(true)}
           onClick={() => setInputFocused(true)}
@@ -125,15 +140,33 @@ const Search = () => {
       </SearchInputContainer>
       <SearchResults
         focused={focused}
-        className="absolute right-0 w-96 z-20 bg-gray-50 py-2 px-6 shadow-card rounded-lg max-h-96 overflow-scroll"
       >
         {search.search(searchTerm).map(({ slug, title, body }, i) => (
-          <div className="my-4" key={i}>
+          <div
+            css={`
+              margin: 16px 0;
+            `}
+            key={i}
+          >
             <Link to={slug}>
-              <h4 className="font-normal pb-2">{title}</h4>
+              <h4
+                css={`
+                  padding-bottom: 8px;
+                `}
+              >
+                {title}
+              </h4>
             </Link>
             <Link to={slug}>
-              <p className="font-light h-24 overflow-scroll">{body}</p>
+              <p
+                css={`
+                  font-weight: 300;
+                  height: 96px;
+                  overflow: scroll;
+                `}
+              >
+                {body}
+              </p>
             </Link>
           </div>
         ))}

@@ -152,10 +152,3 @@ body {
   @apply dark:bg-black;
   @apply font-sans;
 }
-
-.href-anchor {
-  display: block;
-  position: relative;
-  top: -100px;
-  visibility: hidden;
-}

@@ -9,9 +9,7 @@ const ItemsUl = ({ items }) => (
   <ul>
     {items.map((e, i) => (
       <li key={i}>
-        <a href={e.url}>
-          {e.title}
-        </a>
+        <a href={e.url}>{e.title}</a>
         {e.items ? <ItemsUl items={e.items} /> : null}
       </li>
     ))}
@@ -24,9 +22,7 @@ const Post = ({ data }) => {
       <div>
         <div className="mt-32 md:px-24 mx-auto">
           <div className="mx-auto max-w-3xl bg-gray-50 shadow-card dark:bg-black-light dark:text-gray-50 rounded-lg p-12 text-center mb-12">
-            <h1 className="text-6xl font-bold font-title">
-              {data.mdx.frontmatter.title}
-            </h1>
+            <h1 className="text-6xl font-bold">{data.mdx.frontmatter.title}</h1>
             <br />
             <span className="text-sm text-gray-600 dark:text-gray-400">
               {' '}

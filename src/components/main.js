@@ -2,51 +2,79 @@ import React from 'react'
 import codebackground from '../images/codebackground.svg'
 import Highlight from './highlight'
 import { aProps } from '../utilities'
-import { graphql, useStaticQuery } from 'gatsby'
-import { GatsbyImage } from 'gatsby-plugin-image'
-const query = graphql`
-  query MainAds {
-    allAd {
-      edges {
-        node {
-          body
-          image {
-            childImageSharp {
-              gatsbyImageData(
-                formats: [AUTO, WEBP, AVIF]
-                layout: FIXED
-                height: 96
-                width: 112
-                transformOptions: { fit: INSIDE }
-              )
-            }
-          }
-          title
-          url
-        }
-      }
-    }
+import styled from 'styled-components'
+import { Title } from './text'
+import { Small as SmallAd } from './ads'
+
+const MainWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 96px;
+  margin-top: 144px;
+  align-items: center;
+  justify-content: space-between;
+  @media (min-width: 1024px) {
+    flex-direction: row;
+    margin-top: 12rem;
+  }
+  @media (min-width: 1536px) {
+    margin: 192px;
+    margin-bottom: 96px;
   }
 `
+
+const StyledHighlight = styled(Highlight)`
+  font-family: 'Source Code Pro', ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, 'Liberation Mono', 'Courier New', monospace;
+  border-radius: 12px;
+  padding: 24px;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+`
+
+const CodeBackground = styled.img.attrs({
+  src: codebackground,
+  alt: 'Abstract Triangles Background'
+})`
+  position: absolute;
+  top: 50%;
+  z-index: -10;
+  height: auto;
+  width: 208px;
+  right: 256px;
+  transform: translateY(-50%);
+  @media (min-width: 1024px) {
+    width: 320px;
+  }
+`
+
 const Main = () => {
-  const data = useStaticQuery(query)
-  const allAd = data.allAd.edges
-  const randAd = () => allAd[Math.floor(Math.random() * allAd.length)].node
-  const [ad, setAd] = React.useState(null)
-  React.useEffect(() => {
-    setAd(randAd())
-  }, [])
   return (
-    <div
-      className="flex flex-col m-24 mt-36 items-center justify-between lg:flex-row lg:mt-48 2xl:m-48 2xl:mb-24"
-      id="home"
-    >
-      <div className="text-center">
-        <h1 className="text-7xl font-bold font-title">Nathan Chu</h1>
+    <MainWrapper id="home">
+      <div
+        css={`
+          text-align: center;
+        `}
+      >
+        <Title
+          as="h1"
+          css={`
+            font-size: 4.5rem;
+            line-height: 1;
+          `}
+        >
+          Nathan Chu
+        </Title>
         <br />
         <hr />
         <br />
-        <h2 className="text-4xl font-light">
+        <h2
+          css={`
+            font-size: 2.25rem;
+            line-height: 2.5rem;
+            font-weight: 300;
+          `}
+        >
           A web developer |{' '}
           <a {...aProps} href="https://github.com/nathanchu">
             GitHub
@@ -54,24 +82,18 @@ const Main = () => {
         </h2>
         <br />
         <br />
-        <a href={ad?.url || '#'}>
-          <div className="flex flex-col mx-auto font-sans bg-gray-100 dark:bg-black-light rounded-md w-80 h-36 py-2 px-4">
-            <h3 className="text-xl font-bold w-72">{ad?.title || ''}</h3>
-            <div className="flex flex-1 items-center justify-center content-center align-center">
-              {ad?.image?.childImageSharp?.gatsbyImageData ? (
-                <GatsbyImage
-                  className="float-left object-contain flex-none"
-                  image={ad.image.childImageSharp.gatsbyImageData}
-                  alt={ad?.title || ''}
-                />
-              ) : null}
-              <div className="text-left px-4 text-xs">{ad?.body || null}</div>
-            </div>
-          </div>
-        </a>
+        <SmallAd />
       </div>
-      <div className="relative pt-12 lg:ml-48">
-        <Highlight
+      <div
+        css={`
+          position: relative;
+          padding-top: 48px;
+          @media (min-width: 1024px) {
+            margin-left: 192px;
+          }
+        `}
+      >
+        <StyledHighlight
           code={JSON.stringify(
             {
               person: {
@@ -85,15 +107,10 @@ const Main = () => {
             null,
             2
           )}
-          className="font-mono rounded-xl p-6 text-xl leading-6"
         />
-        <img
-          src={codebackground}
-          alt="Abstract Triangle Background"
-          className="absolute top-1/2 -z-10 h-auto w-52 right-64 transform -translate-y-1/2 lg:w-80"
-        />
+        <CodeBackground />
       </div>
-    </div>
+    </MainWrapper>
   )
 }
 
