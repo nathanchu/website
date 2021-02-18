@@ -85,7 +85,7 @@ const Projects = () => {
             website={website}
             description={description}
           />
-          <div className="shadow-card hidden bg-gray-50 dark:bg-black-light rounded-lg m-4 -ml-24 overflow-hidden lg:block">
+          <div className="relative shadow-card hidden bg-gray-50 dark:bg-black-light rounded-lg m-4 -ml-24 overflow-hidden lg:block">
             <a {...aProps} href={website}>
               {image}
             </a>
