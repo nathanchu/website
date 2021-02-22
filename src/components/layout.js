@@ -1,4 +1,5 @@
 import React from 'react'
+import Footer from './footer'
 import Nav from './nav'
 import SEO from './seo'
 
@@ -13,6 +14,7 @@ const Layout = ({ title, description, image, article, children, ...rest }) => {
       />
       <Nav />
       {children}
+      <Footer />
     </div>
   )
 }

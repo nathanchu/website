@@ -9,7 +9,7 @@ const Home = () => {
     <Layout
       title="Home"
       css={`
-        margin: 96px 0;
+        margin-top: 96px;
       `}
     >
       <Main />

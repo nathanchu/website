@@ -50,16 +50,18 @@ const NavWrapper = styled.nav`
   justify-content: space-between;
   align-items: center;
   position: fixed;
-  top: 0px;
-  right: 0px;
-  left: 0px;
+  top: 0;
+  right: 0;
+  left: 0;
   height: 80px;
   padding: 0 24px;
   z-index: 10;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
-    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   background-color: rgb(249, 250, 251);
+  background-image: radial-gradient(rgb(229, 231, 235) 10%, transparent 10%);
+  background-size: 25px 25px;
   @media (prefers-color-scheme: dark) {
+    background-image: radial-gradient(rgb(55, 65, 75) 10%, transparent 10%);
     background-color: rgb(48, 48, 48);
     color: rgb(249, 250, 251);
   }

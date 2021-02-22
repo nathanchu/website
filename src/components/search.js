@@ -130,6 +130,7 @@ const Search = () => {
             padding: 8px;
             padding-left: 32px;
             width: 160px;
+            border-radius: 4px;
           `}
           onChange={e => setSearchTerm(e?.target?.value || '')}
           onFocus={() => setInputFocused(true)}
