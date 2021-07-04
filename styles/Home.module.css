@@ -74,3 +74,21 @@
     opacity: 0;
   }
 }
+
+.markdownBody {
+  max-width: 635px;
+  max-width: 65ch;
+}
+
+.markdownBody code {
+  font-family: 'Courier New';
+  font-weight: bold;
+  font-size: .9em;
+  background-color: #303030;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.markdownBody a {
+  text-decoration: underline;
+}
