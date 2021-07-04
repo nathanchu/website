@@ -1,5 +1,4 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGithub } from '@fortawesome/free-brands-svg-icons'
+import { GoMarkGithub } from '@react-icons/all-files/go/GoMarkGithub'
 import styles from '../styles/Home.module.css'
 import useTypewriter from '../components/usetypewriter'
 
@@ -21,7 +20,7 @@ export default function Home() {
 
       <h1>
         <a href="https://github.com/nathanchu">
-          <FontAwesomeIcon icon={faGithub} style={{ fontSize: '32px' }} />
+          <GoMarkGithub />
         </a>
       </h1>
     </div>
