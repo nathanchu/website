@@ -21,10 +21,11 @@
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  display:inline-block
 }
 
 .gradientVariable {
-  background: linear-gradient(135deg, #f2709c, #ff9472);
+  background: linear-gradient(135deg, #ff4b19, #fab432);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

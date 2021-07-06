@@ -16,23 +16,17 @@ a {
   box-sizing: inherit;
 }
 body {
-  background: linear-gradient(225deg, #c8872d, #a51414, #c8872d);
-  background-size: 600% 600%;
-  animation: bg-gradient 60s ease infinite;
+  background-image: radial-gradient(
+      at 90% 10%,
+      #c8550e 0,
+      transparent 50%
+    ),
+    radial-gradient(at 60% 50%, #06d5f9 0, transparent 100%),
+    radial-gradient(at 20% 80%, #5b01bc 0, transparent 75%),
+    radial-gradient(at 20% 20%, #e614d8 0, transparent 100%),
+    radial-gradient(at 80% 80%, #10e537 0, transparent 100%);
   background-repeat: no-repeat;
   background-attachment: fixed;
-}
-
-@keyframes bg-gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
 }
 
 h1 {

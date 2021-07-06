@@ -20,7 +20,17 @@ export default function Home(props) {
       <hr />
 
       <div className={styles.markdownBody}>
-        {props.notionData ? <ReactNotionRenderer blocks={props.notionData} /> : <span>Oh no, an error! Report it in my <a href="https://github.com/nathanchu/website/issues">issue tracker</a>.</span>}
+        {props.notionData ? (
+          <ReactNotionRenderer blocks={props.notionData} />
+        ) : (
+          <span>
+            Oh no, an error! Report it in my{' '}
+            <a href="https://github.com/nathanchu/website/issues">
+              issue tracker
+            </a>
+            .
+          </span>
+        )}
       </div>
 
       <h1>
