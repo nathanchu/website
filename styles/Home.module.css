@@ -21,7 +21,7 @@
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  display:inline-block
+  display: inline-block;
 }
 
 .gradientVariable {
@@ -87,7 +87,7 @@
 .markdownBody code {
   font-family: 'Courier New';
   font-weight: bold;
-  font-size: .9em;
+  font-size: 0.9em;
   background-color: #303030;
   padding: 4px;
   border-radius: 4px;
@@ -103,7 +103,7 @@
 }
 
 .headerGitHubLink {
-  display:none;
+  display: none;
   margin-left: auto;
   margin-right: 64px;
 }

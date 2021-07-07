@@ -30,10 +30,10 @@ export default function Home(props) {
           things.
         </h1>
         <h1 className={styles.headerGitHubLink}>
-        <a href="https://github.com/nathanchu">
-          <GoMarkGithub aria-label="GitHub" />
-        </a>
-      </h1>
+          <a href="https://github.com/nathanchu">
+            <GoMarkGithub aria-label="GitHub" />
+          </a>
+        </h1>
       </div>
 
       <hr />
