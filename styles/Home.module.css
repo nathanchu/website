@@ -96,3 +96,34 @@
 .markdownBody a {
   text-decoration: underline;
 }
+
+.headerContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.headerGitHubLink {
+  display:none;
+  margin-left: auto;
+  margin-right: 64px;
+}
+
+@media screen and (min-width: 550px) {
+  .headerContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+  }
+  .headerName {
+    margin-right: 64px;
+  }
+}
+
+@media screen and (min-width: 650px) {
+  .footerGitHubLink {
+    display: none;
+  }
+  .headerGitHubLink {
+    display: inline;
+  }
+}

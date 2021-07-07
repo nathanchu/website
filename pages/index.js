@@ -15,15 +15,26 @@ export default function Home(props) {
       <Head>
         <title>Home | Nathan Chu</title>
       </Head>
-      <h1>
-        Hi <span className={styles.wave}>&#128075;</span> , I&apos;m{' '}
-        <span className={styles.gradientName}>Nathan Chu</span>.
-      </h1>
+      <div className={styles.headerContainer}>
+        <h1 className={styles.headerName}>
+          Hi <span className={styles.wave}>&#128075;</span> , I&apos;m
+          <br />
+          <span className={styles.gradientName}>Nathan Chu</span>.
+        </h1>
 
-      <h1>
-        I code <span className={styles.gradientVariable}>{gradientValue}</span>
-        <span className={styles.cursor}>_</span> things.
+        <h1 className={styles.headerVariable}>
+          I code <br />
+          <span className={styles.gradientVariable}>{gradientValue}</span>
+          <span className={styles.cursor}>_</span>
+          <br />
+          things.
+        </h1>
+        <h1 className={styles.headerGitHubLink}>
+        <a href="https://github.com/nathanchu">
+          <GoMarkGithub aria-label="GitHub" />
+        </a>
       </h1>
+      </div>
 
       <hr />
 
@@ -41,7 +52,7 @@ export default function Home(props) {
         )}
       </div>
 
-      <h1>
+      <h1 className={styles.footerGitHubLink}>
         <a href="https://github.com/nathanchu">
           <GoMarkGithub aria-label="GitHub" />
         </a>
