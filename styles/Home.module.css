@@ -77,8 +77,11 @@
 }
 
 .markdownBody {
+  padding: 4px 8px;
   max-width: 635px;
   max-width: 65ch;
+  font-size: 18px;
+  line-height: 1.75;
 }
 
 .markdownBody code {
