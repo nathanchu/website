@@ -1,20 +1,45 @@
 import Head from 'next/head'
-import { IconContext } from '@react-icons/all-files'
 import { GoMarkGithub } from '@react-icons/all-files/go/GoMarkGithub'
 import styles from '../styles/Home.module.css'
 import useTypewriter from '../components/usetypewriter'
 import ReactNotionRenderer from 'notion-react-renderer'
+import { useState } from 'react'
 
 export default function Home(props) {
   const gradientValue = useTypewriter(
     ['amazing', 'wonderful', 'useful', 'weird', 'awesome'],
     { random: true }
   )
+
+  const [colors, setColors] = useState(props.colors)
+
+  const [positions, setPositions] = useState(props.positions)
+
   return (
     <div className={styles.container}>
       <Head>
         <title>Home | Nathan Chu</title>
       </Head>
+      <style jsx global>{`
+        body {
+          background-color: #${colors[0]};
+          ${colors && positions
+            ? `
+              background-image: ${
+                Array(7)
+                  .fill()
+                  .map(
+                    (v, i) =>
+                      `radial-gradient(at ${positions[i][0]}% ${
+                        positions[i][1]
+                      }%, #${colors[i + 1]} 0, transparent 50%)`
+                  )
+                  .join(',') + ';'
+              };
+            `
+            : ''}
+        }
+      `}</style>
       <div className={styles.headerContainer}>
         <h1 className={styles.headerName}>
           Hi <span className={styles.wave}>&#128075;</span> , I&apos;m
@@ -51,7 +76,32 @@ export default function Home(props) {
           </span>
         )}
       </div>
-
+      <br />
+      <button
+        onClick={() => {
+          setColors(
+            Array(8)
+              .fill()
+              .map(() =>
+                Math.floor(Math.random() * 16777215)
+                  .toString(16)
+                  .padStart(6, '0')
+              )
+          )
+          setPositions(
+            Array(7)
+              .fill()
+              .map(() =>
+                Array(2)
+                  .fill()
+                  .map(() => Math.floor(Math.random() * 101))
+              )
+          )
+        }}
+        className={styles.rainbowButton}
+      >
+        Randomize Background
+      </button>
       <h1 className={styles.footerGitHubLink}>
         <a href="https://github.com/nathanchu">
           <GoMarkGithub aria-label="GitHub" />
@@ -72,9 +122,26 @@ export async function getStaticProps() {
     }
   )
   const json = await data.json()
+  const colors = Array(8)
+    .fill()
+    .map(() =>
+      Math.floor(Math.random() * 16777215)
+        .toString(16)
+        .padStart(6, '0')
+    )
+  const positions = Array(7)
+    .fill()
+    .map(() =>
+      Array(2)
+        .fill()
+        .map(() => Math.floor(Math.random() * 101))
+    )
+
   return {
     props: {
-      notionData: json?.results
+      notionData: json?.results,
+      colors,
+      positions
     },
     revalidate: 1
   }
