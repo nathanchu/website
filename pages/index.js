@@ -5,21 +5,12 @@ import useTypewriter from '../components/usetypewriter'
 import ReactNotionRenderer from 'notion-react-renderer'
 import { useState } from 'react'
 
-export default function Home(props) {
-  const gradientValue = useTypewriter(
-    ['amazing', 'wonderful', 'useful', 'weird', 'awesome'],
-    { random: true }
-  )
-
+const RandomizeBackgroundButton = props => {
   const [colors, setColors] = useState(props.colors)
 
   const [positions, setPositions] = useState(props.positions)
-
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Home | Nathan Chu</title>
-      </Head>
+    <>
       <style jsx global>{`
         body {
           background-color: #${colors[0]};
@@ -29,7 +20,7 @@ export default function Home(props) {
                 Array(7)
                   .fill()
                   .map(
-                    (v, i) =>
+                    (_, i) =>
                       `radial-gradient(at ${positions[i][0]}% ${
                         positions[i][1]
                       }%, #${colors[i + 1]} 0, transparent 50%)`
@@ -40,43 +31,6 @@ export default function Home(props) {
             : ''}
         }
       `}</style>
-      <div className={styles.headerContainer}>
-        <h1 className={styles.headerName}>
-          Hi <span className={styles.wave}>&#128075;</span> , I&apos;m
-          <br />
-          <span className={styles.gradientName}>Nathan Chu</span>.
-        </h1>
-
-        <h1 className={styles.headerVariable}>
-          I code <br />
-          <span className={styles.gradientVariable}>{gradientValue}</span>
-          <span className={styles.cursor}>_</span>
-          <br />
-          things.
-        </h1>
-        <h1 className={styles.headerGitHubLink}>
-          <a href="https://github.com/nathanchu">
-            <GoMarkGithub aria-label="GitHub" />
-          </a>
-        </h1>
-      </div>
-
-      <hr />
-
-      <div className={styles.markdownBody}>
-        {props.notionData ? (
-          <ReactNotionRenderer blocks={props.notionData} />
-        ) : (
-          <span>
-            Oh no, an error! Report it in my{' '}
-            <a href="https://github.com/nathanchu/website/issues">
-              issue tracker
-            </a>
-            .
-          </span>
-        )}
-      </div>
-      <br />
       <button
         onClick={() => {
           setColors(
@@ -102,6 +56,70 @@ export default function Home(props) {
       >
         Randomize Background
       </button>
+    </>
+  )
+}
+
+const Header = () => {
+  const gradientValue = useTypewriter(
+    ['amazing', 'wonderful', 'useful', 'weird', 'awesome'],
+    { random: true }
+  )
+
+  return (
+    <div className={styles.headerContainer}>
+      <h1 className={styles.headerName}>
+        Hi <span className={styles.wave}>&#128075;</span> , I&apos;m
+        <br />
+        <span className={styles.gradientName}>Nathan Chu</span>.
+      </h1>
+
+      <h1 className={styles.headerVariable}>
+        I code <br />
+        <span className={styles.gradientVariable}>{gradientValue}</span>
+        <span className={styles.cursor}>_</span>
+        <br />
+        things.
+      </h1>
+      <h1 className={styles.headerGitHubLink}>
+        <a href="https://github.com/nathanchu">
+          <GoMarkGithub aria-label="GitHub" />
+        </a>
+      </h1>
+    </div>
+  )
+}
+
+export default function Home(props) {
+  return (
+    <div className={styles.container}>
+      <Head>
+        <title>Home | Nathan Chu</title>
+      </Head>
+
+      <Header />
+
+      <hr />
+
+      <div className={styles.markdownBody}>
+        {props.notionData ? (
+          <ReactNotionRenderer blocks={props.notionData} />
+        ) : (
+          <span>
+            Oh no, an error! Report it in my{' '}
+            <a href="https://github.com/nathanchu/website/issues">
+              issue tracker
+            </a>
+            .
+          </span>
+        )}
+      </div>
+      <br />
+      <RandomizeBackgroundButton
+        colors={props.colors}
+        positions={props.positions}
+      />
+      <br />
       <h1 className={styles.footerGitHubLink}>
         <a href="https://github.com/nathanchu">
           <GoMarkGithub aria-label="GitHub" />
