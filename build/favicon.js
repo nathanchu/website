@@ -1,4 +1,4 @@
-const puppeteer = require('puppeteer')
+const { chromium } = require('playwright')
 const { writeFile } = require('fs/promises')
 const toIco = require('to-ico')
 
@@ -10,11 +10,11 @@ const randomColor = () =>
 const randomPercent = () => Math.floor(Math.random() * 101)
 
 module.exports = async () => {
-  const browser = await puppeteer.launch()
+  const browser = await chromium.launch()
 
   const page = await browser.newPage()
 
-  await page.setViewport({
+  await page.setViewportSize({
     width: 256,
     height: 256
   })
@@ -39,7 +39,7 @@ module.exports = async () => {
           }
         </style>
       </head>
-      
+
       <body>
       </body>
     </html>
